@@ -1,5 +1,5 @@
-<!-- BOTTOM NAV MOBILE - HANYA untuk mobile (<768px) -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 pb-safe">
+<!-- BOTTOM NAVIGATION BAR (Mobile Only - <640px) -->
+<nav class="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 pb-safe">
     <div class="grid grid-cols-3 h-16">
         <button onclick="scrollToSection('sec-home')" class="nav-link-mobile flex flex-col items-center justify-center text-emerald-600 space-y-1" data-target="sec-home">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,7 +21,3 @@
         </button>
     </div>
 </nav>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html> 

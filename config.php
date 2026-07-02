@@ -1,5 +1,13 @@
 <?php
-// config.php
-define('BASE_URL', 'http://localhost/AIK4/SahabatSholat/');
-// Tambahkan koneksi database di sini jika diperlukan nanti
+$host = 'localhost';
+$dbname = 'sahabat_sholat';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Koneksi database gagal: " . $e->getMessage());
+}
 ?>
