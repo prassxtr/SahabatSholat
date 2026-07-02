@@ -378,11 +378,12 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
                 Kembali
             </a>
             <?php else: ?>
-            <a href="index.php#sec-sholat" class="bg-white border-2 border-emerald-200 text-emerald-700 font-bold px-6 py-3 rounded-xl hover:bg-emerald-50 transition flex items-center gap-2">
+            <!-- ✅ FIX: Pakai ../ untuk naik ke root folder -->
+            <a href="../index.php#sec-sholat" class="bg-white border-2 border-emerald-200 text-emerald-700 font-bold px-6 py-3 rounded-xl hover:bg-emerald-50 transition flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
-                Kembali
+                Kembali ke Daftar Sholat
             </a>
             <?php endif; ?>
             
@@ -394,7 +395,8 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
                 </svg>
             </a>
             <?php else: ?>
-            <a href="index.php#sec-sholat" class="bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-emerald-700 transition flex items-center gap-2 shadow-lg">
+            <!-- ✅ FIX: Pakai ../ untuk naik ke root folder -->
+            <a href="../index.php#sec-sholat" class="bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-emerald-700 transition flex items-center gap-2 shadow-lg">
                 Selesai
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
