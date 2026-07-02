@@ -1,9 +1,6 @@
-<?php
-// Pastikan tidak ada output sebelum ini!
-?>
-<section id="sec-surah" class="w-full min-h-[calc(100vh-64px)] snap-start bg-gradient-to-b from-emerald-100 via-emerald-50 to-white flex flex-col justify-center items-center px-4 md:px-8 py-8 md:py-12">
+<section id="sec-surah" class="w-full min-h-full snap-start bg-gradient-to-b from-emerald-100 via-emerald-50 to-white flex flex-col justify-center items-center px-4 md:px-8 py-8 md:py-12">
     <div class="max-w-6xl w-full mx-auto text-center">
-        <div class="space-y-3 mb-8 md:mb-10">
+        <div class="space-y-3 mb-10">
             <span class="inline-block bg-emerald-200 text-emerald-800 text-xs md:text-sm font-bold px-4 py-1.5 rounded-full">Penyempurna Raka'at</span>
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">Bacaan Surah Pendek</h2>
             <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
@@ -11,7 +8,6 @@
         </div>
 
         <?php
-        // Data surah hardcoded (fallback)
         $surahs = [
             ['no' => 1, 'latin' => 'Al-Fatihah', 'arab' => 'الفاتحة', 'ket' => 'Pembukaan • 7 ayat'],
             ['no' => 2, 'latin' => 'Al-Kautsar', 'arab' => 'الكوثر', 'ket' => 'Nikmat yang Berlimpah • 3 ayat'],
@@ -24,7 +20,9 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-left w-full">
             <?php foreach($surahs as $s): ?>
-            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 cursor-pointer group">
+            <!-- GANTI div dengan a tag untuk link ke detail -->
+            <a href="sections/detail-surah.php?surah=<?= $s['no'] ?>" 
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 cursor-pointer group block">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center space-x-4">
                         <span class="bg-emerald-500 text-white font-bold w-10 h-10 rounded-xl flex items-center justify-center text-sm group-hover:bg-emerald-600 transition-all shadow-md"><?=$s['no']; ?></span>
@@ -38,7 +36,7 @@
                         <span class="text-emerald-600 group-hover:translate-x-1 transition-transform font-bold">›</span>
                     </div>
                 </div>
-            </div>
+            </a>
             <?php endforeach; ?>
         </div>
 
