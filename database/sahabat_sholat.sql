@@ -143,3 +143,4 @@ INSERT INTO ayat (id_surah, nomor_ayat, teks_arab, teks_latin, terjemahan, audio
 (1, 5, 'اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُ', 'Iyyāka naʿbudu wa iyyāka nastaʿīn', 'Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan.', 'assets/audio/fatihah5.mp3'),
 (1, 6, 'اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَ', 'Ihdinaṣ-ṣirāṭal-mustaqīm', 'Tunjukilah kami jalan yang lurus.', 'assets/audio/fatihah6.mp3'),
 (1, 7, 'صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّآلِّيْنَ', 'Ṣirāṭallażīna anʿamta ʿalaihim ghairil-maghḍūbi ʿalaihim wa laḍ-ḍāllīn', '(yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.', 'assets/audio/fatihah7.mp3');
+

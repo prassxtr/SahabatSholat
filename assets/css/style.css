@@ -1,5 +1,5 @@
-/* ===== RESET - PENTING! ===== */
-* {
+/* Reset & Base */
+* {                    /* ✅ TAMBAHKAN * DI SINI */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,23 +7,26 @@
 
 html {
     scroll-behavior: smooth;
+    charset: UTF-8;    /* ✅ TAMBAHKAN */
 }
 
 body {
     margin: 0;
-    padding-top: 56px;
+    padding-top: 64px;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     background-color: #ecfdf5;
+    charset: UTF-8;    /* ✅ TAMBAHKAN */
 }
 
-@media (min-width: 768px) {
+/* Mobile padding adjustment */
+@media (max-width: 639px) {
     body {
-        padding-top: 64px;
+        padding-top: 56px;
     }
 }
 
-/* ===== SCROLLBAR ===== */
+/* Custom Scrollbar */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -32,12 +35,12 @@ body {
     scrollbar-width: none;
 }
 
-/* ===== SAFE AREA ===== */
+/* Safe Area */
 .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* ===== HEADER ===== */
+/* Header Fixes */
 header {
     position: fixed;
     width: 100%;
@@ -50,7 +53,7 @@ header h1 {
     white-space: nowrap;
 }
 
-/* ===== MOBILE MENU ===== */
+/* Mobile Menu */
 #mobile-menu {
     transition: all 0.3s ease;
 }
@@ -60,64 +63,110 @@ header h1 {
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* ===== FADE IN ===== */
+/* Fade In Animation */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* ===== TOGGLE BUTTONS ===== */
+/* Toggle Buttons */
 button[id^="btn-"] {
     transition: all 0.3s ease;
 }
 
-/* ===== RESPONSIVE TEXT ===== */
-@media (max-width: 639px) {
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.25rem; }
+/* Responsive Text */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
 }
 
-@media (min-width: 640px) and (max-width: 767px) {
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.5rem; }
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
-/* ===== SECTION ===== */
-section {
-    width: 100%;
-    scroll-snap-align: start;
+/* Grid Responsive */
+.grid-cols-2 > div,
+.grid-cols-3 > div,
+.grid-cols-5 > div {
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 639px) {
-    section { padding: 2rem 1rem; }
+/* Button Active State */
+button:active {
+    transform: scale(0.98);
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-    section { padding: 3rem 1.5rem; }
-}
-
-/* ===== SCROLL CONTAINER ===== */
-#scroll-container {
-    scroll-snap-type: y mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* ===== IMAGE ===== */
+/* Image Responsive */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* ===== BUTTON ===== */
-button:active {
-    transform: scale(0.98);
+/* Section Padding */
+section {
+    width: 100%;
 }
 
+@media (max-width: 639px) {
+    section {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    section {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* Scroll Snap */
+#scroll-container {
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+}
+
+/* Focus states */
 button:focus-visible {
     outline: 2px solid #10b981;
     outline-offset: 2px;
+}
+
+/* Arabic Font Support */
+.arabic-text {
+    font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade', serif;
+    direction: rtl;
 }

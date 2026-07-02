@@ -1,17 +1,22 @@
 <?php 
-// Koneksi database - jika gagal, gunakan data fallback
+// Koneksi database dengan fallback
 include __DIR__ . '/../config.php';
+
+// Default data jika database belum tersedia
+$sholatWajib = [];
+$sholatSunnah = [];
 
 if (isset($pdo)) {
     try {
-        // Ambil data dari database
+        // Ambil sholat wajib dari database
         $stmt = $pdo->query("SELECT * FROM sholat WHERE jenis = 'wajib' ORDER BY id ASC");
         $sholatWajib = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
+        // Ambil sholat sunnah dari database
         $stmt = $pdo->query("SELECT * FROM sholat WHERE jenis = 'sunnah' ORDER BY id ASC");
         $sholatSunnah = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        // Fallback jika database belum dibuat
+        // Fallback data jika query gagal
         $sholatWajib = [
             ['id' => 1, 'nama' => 'Subuh', 'rakaat' => '2 Raka\'at', 'icon' => '🌅', 'bg_color' => 'amber'],
             ['id' => 2, 'nama' => 'Dzuhur', 'rakaat' => '4 Raka\'at', 'icon' => '☀️', 'bg_color' => 'orange'],
@@ -28,7 +33,7 @@ if (isset($pdo)) {
         ];
     }
 } else {
-    // Fallback jika config.php tidak ada
+    // Fallback jika config.php tidak ada/koneksi gagal
     $sholatWajib = [
         ['id' => 1, 'nama' => 'Subuh', 'rakaat' => '2 Raka\'at', 'icon' => '🌅', 'bg_color' => 'amber'],
         ['id' => 2, 'nama' => 'Dzuhur', 'rakaat' => '4 Raka\'at', 'icon' => '☀️', 'bg_color' => 'orange'],
@@ -46,10 +51,8 @@ if (isset($pdo)) {
 }
 ?>
 
-<section id="sec-sholat" class="w-full min-h-full snap-start bg-gradient-to-br from-white via-emerald-50 to-emerald-100 flex flex-col justify-center items-center px-4 md:px-8 py-8 md:py-12 relative overflow-hidden">
-    
+<section id="sec-sholat" class="w-full snap-start bg-gradient-to-br from-white via-emerald-50 to-emerald-100 flex flex-col justify-center items-center px-4 md:px-8 py-12 md:py-16 relative overflow-hidden">
     <div class="max-w-7xl w-full mx-auto relative z-10">
-        <!-- Header Section -->
         <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-6 md:mb-8">
             
             <!-- Left Illustration -->
@@ -88,33 +91,43 @@ if (isset($pdo)) {
             </div>
         </div>
         
-        <!-- Grid Sholat Wajib -->
-        <div id="content-fardhu" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full">
-            <?php foreach($sholatWajib as $sholat): ?>
-            <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?>&langkah=1" 
-               class="bg-white border-2 border-emerald-100 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl hover:border-emerald-300 transition-all text-center group cursor-pointer transform hover:-translate-y-2 block">
-                <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-<?= $sholat['bg_color'] ?>-100 to-<?= $sholat['bg_color'] ?>-200 rounded-xl md:rounded-2xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-md group-hover:scale-110 transition">
-                    <?= $sholat['icon'] ?>
-                </div>
-                <h3 class="font-extrabold mt-2 md:mt-4 text-gray-900 text-sm md:text-lg"><?= $sholat['nama'] ?></h3>
-                <p class="text-xs md:text-sm text-emerald-600 font-semibold mt-1 md:mt-2 bg-emerald-50 px-2 md:px-3 py-0.5 md:py-1 rounded-full inline-block"><?= $sholat['rakaat'] ?></p>
-            </a>
-            <?php endforeach; ?>
-        </div>
+<!-- Grid Sholat Wajib -->
+<div id="content-fardhu" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full">
+    <?php if(!empty($sholatWajib)): ?>
+        <?php foreach($sholatWajib as $sholat): ?>
+        <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?>&langkah=1" 
+            class="bg-white border-2 border-emerald-100 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl hover:border-emerald-300 transition-all text-center group cursor-pointer transform hover:-translate-y-2 block">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-<?= $sholat['bg_color'] ?? 'emerald' ?>-100 to-<?= $sholat['bg_color'] ?? 'emerald' ?>-200 rounded-xl md:rounded-2xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-md group-hover:scale-110 transition">
+                <?= htmlspecialchars($sholat['icon'] ?? '📿') ?>
+            </div>
+            <h3 class="font-extrabold mt-2 md:mt-4 text-gray-900 text-sm md:text-lg"><?= htmlspecialchars($sholat['nama']) ?></h3>
+            <p class="text-xs md:text-sm text-emerald-600 font-semibold mt-1 md:mt-2 bg-emerald-50 px-2 md:px-3 py-0.5 md:py-1 rounded-full inline-block"><?= htmlspecialchars($sholat['rakaat']) ?></p>
+        </a>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
 
         <!-- Grid Sholat Sunnah -->
         <div id="content-sunnah" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full hidden">
-            <?php foreach($sholatSunnah as $sholat): ?>
-            <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?>&langkah=1" 
-                class="bg-white border-2 border-emerald-100 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl hover:border-emerald-300 transition-all text-center group cursor-pointer transform hover:-translate-y-2 block">
-                <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-<?= $sholat['bg_color'] ?>-100 to-<?= $sholat['bg_color'] ?>-200 rounded-xl md:rounded-2xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-md group-hover:scale-110 transition">
-                    <?= $sholat['icon'] ?>
+            <?php if(!empty($sholatSunnah)): ?>
+                <?php foreach($sholatSunnah as $sholat): ?>
+                <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?? 1 ?>&langkah=1" 
+                    class="bg-white border-2 border-emerald-100 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl hover:border-emerald-300 transition-all text-center group cursor-pointer transform hover:-translate-y-2 block">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-<?= $sholat['bg_color'] ?? 'emerald' ?>-100 to-<?= $sholat['bg_color'] ?? 'emerald' ?>-200 rounded-xl md:rounded-2xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-md group-hover:scale-110 transition">
+                        <?= htmlspecialchars($sholat['icon'] ?? '🌙') ?>
+                    </div>
+                    <h3 class="font-extrabold mt-2 md:mt-4 text-gray-900 text-sm md:text-lg"><?= htmlspecialchars($sholat['nama']) ?></h3>
+                    <p class="text-xs md:text-sm text-emerald-600 font-semibold mt-1 md:mt-2 bg-emerald-50 px-2 md:px-3 py-0.5 md:py-1 rounded-full inline-block"><?= htmlspecialchars($sholat['rakaat']) ?></p>
+                    <?php if(isset($sholat['keterangan'])): ?>
+                    <p class="text-[10px] md:text-xs text-gray-500 mt-1 md:mt-2"><?= htmlspecialchars($sholat['keterangan']) ?></p>
+                    <?php endif; ?>
+                </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-span-full text-center py-12">
+                    <p class="text-gray-500">Data sholat sunnah sedang dimuat...</p>
                 </div>
-                <h3 class="font-extrabold mt-2 md:mt-4 text-gray-900 text-sm md:text-lg"><?= $sholat['nama'] ?></h3>
-                <p class="text-xs md:text-sm text-emerald-600 font-semibold mt-1 md:mt-2 bg-emerald-50 px-2 md:px-3 py-0.5 md:py-1 rounded-full inline-block"><?= $sholat['rakaat'] ?></p>
-                <p class="text-[10px] md:text-xs text-gray-500 mt-1 md:mt-2"><?= $sholat['keterangan'] ?></p>
-            </a>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 </section>
