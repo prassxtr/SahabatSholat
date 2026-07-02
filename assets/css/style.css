@@ -165,6 +165,7 @@ button:focus-visible {
 
 /* Arabic Font Support */
 .arabic-text {
-    font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade', serif;
+    font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade', 'Arial', sans-serif;
     direction: rtl;
+    unicode-bidi: embed;
 }
