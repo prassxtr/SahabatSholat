@@ -1,5 +1,5 @@
-<section id="sec-home" class="w-full snap-start bg-gradient-to-br from-emerald-50 via-emerald-100 to-white flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 py-12 md:py-16 relative overflow-hidden">
-    <div class="max-w-7xl w-full mx-auto relative z-10">
+<section id="sec-home" class="w-full min-h-[calc(100vh-64px)] snap-start bg-gradient-to-br from-emerald-50 via-emerald-100 to-white flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 py-8 md:py-16 relative overflow-hidden">
+    <div class="max-w-7xl w-full mx-auto relative z-10 flex flex-col justify-center flex-1">
         <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
             
             <!-- Left Content -->
@@ -34,7 +34,7 @@
         </div>
 
         <!-- Menu Utama Card - DENGAN LINK -->
-        <div class="mt-8 md:mt-12 bg-white rounded-2xl md:rounded-3xl shadow-xl p-4 md:p-8 border border-emerald-100">
+        <div class="mt-6 md:mt-12 bg-white rounded-2xl md:rounded-3xl shadow-xl p-4 md:p-8 border border-emerald-100">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
                 
                 <!-- Niat - Link ke gerakan 1 -->

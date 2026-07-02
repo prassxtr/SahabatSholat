@@ -1,5 +1,5 @@
 /* Reset & Base */
-* {                    /* ✅ TAMBAHKAN * DI SINI */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,7 +7,6 @@
 
 html {
     scroll-behavior: smooth;
-    charset: UTF-8;    /* ✅ TAMBAHKAN */
 }
 
 body {
@@ -16,7 +15,6 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     background-color: #ecfdf5;
-    charset: UTF-8;    /* ✅ TAMBAHKAN */
 }
 
 /* Mobile padding adjustment */

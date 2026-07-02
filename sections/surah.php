@@ -7,8 +7,10 @@ $surahs = [];
 
 if (isset($pdo)) {
     try {
+        // Set charset UTF-8
+        $pdo->query("SET NAMES utf8mb4");
+        
         // Ambil data surah dari database
-        $stmt = $pdo->query("SET NAMES utf8mb4");
         $stmt = $pdo->query("SELECT id, nomor, nama_latin, nama_arab, arti, jumlah_ayat FROM surah ORDER BY nomor ASC");
         $surahs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
@@ -35,19 +37,9 @@ if (isset($pdo)) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bacaan Surah Pendek - Sahabat Sholat</title>
-</head>
-<body>
-
-<section id="sec-surah" class="w-full snap-start bg-gradient-to-b from-emerald-100 via-emerald-50 to-white flex flex-col justify-center items-center px-4 md:px-8 py-12 md:py-16">
+<section id="sec-surah" class="w-full min-h-[calc(100vh-64px)] snap-start bg-gradient-to-b from-emerald-100 via-emerald-50 to-white flex flex-col justify-center items-center px-4 md:px-8 py-8 md:py-12">
     <div class="max-w-6xl w-full mx-auto text-center">
-        <div class="space-y-3 mb-10">
+        <div class="space-y-3 mb-8 md:mb-10">
             <span class="inline-block bg-emerald-200 text-emerald-800 text-xs md:text-sm font-bold px-4 py-1.5 rounded-full">Penyempurna Raka'at</span>
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">Bacaan Surah Pendek</h2>
             <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
@@ -58,7 +50,7 @@ if (isset($pdo)) {
             <?php if(!empty($surahs)): ?>
                 <?php foreach($surahs as $s): ?>
                 <a href="sections/detail-surah.php?surah=<?= $s['id'] ?? 1 ?>" 
-                    class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 cursor-pointer group block">
+                   class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-300 cursor-pointer group block">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-4">
                             <span class="bg-emerald-500 text-white font-bold w-10 h-10 rounded-xl flex items-center justify-center text-sm group-hover:bg-emerald-600 transition-all shadow-md">
@@ -94,6 +86,3 @@ if (isset($pdo)) {
         </footer>
     </div>
 </section>
-
-</body>
-</html>

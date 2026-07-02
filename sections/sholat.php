@@ -33,7 +33,7 @@ if (isset($pdo)) {
         ];
     }
 } else {
-    // Fallback jika config.php tidak ada/koneksi gagal
+    // Fallback jika config.php tidak ada
     $sholatWajib = [
         ['id' => 1, 'nama' => 'Subuh', 'rakaat' => '2 Raka\'at', 'icon' => '🌅', 'bg_color' => 'amber'],
         ['id' => 2, 'nama' => 'Dzuhur', 'rakaat' => '4 Raka\'at', 'icon' => '☀️', 'bg_color' => 'orange'],
@@ -44,14 +44,14 @@ if (isset($pdo)) {
     $sholatSunnah = [
         ['id' => 6, 'nama' => 'Tahajud', 'rakaat' => '2-12 Raka\'at', 'icon' => '🌙', 'bg_color' => 'indigo', 'keterangan' => 'Sholat malam'],
         ['id' => 7, 'nama' => 'Dhuha', 'rakaat' => '2-8 Raka\'at', 'icon' => '🌞', 'bg_color' => 'amber', 'keterangan' => 'Sholat pagi'],
-        ['id' => 8, 'nama' => 'Hajat', 'rakaat' => '2-12 Raka\'at', 'icon' => '🤲', 'bg_color' => 'blue', 'keterangan' => 'Memohon hajat'],
-        ['id' => 9, 'nama' => 'Istikharah', 'rakaat' => '2 Raka\'at', 'icon' => '💭', 'bg_color' => 'purple', 'keterangan' => 'Memohon petunjuk'],
+        ['id' => 8, 'nama' => 'Hajat', 'rakaat' => '2-12 Raka\'at', 'icon' => '', 'bg_color' => 'blue', 'keterangan' => 'Memohon hajat'],
+        ['id' => 9, 'nama' => 'Istikharah', 'rakaat' => '2 Raka\'at', 'icon' => '', 'bg_color' => 'purple', 'keterangan' => 'Memohon petunjuk'],
         ['id' => 10, 'nama' => 'Taubat', 'rakaat' => '2 Raka\'at', 'icon' => '🙏', 'bg_color' => 'emerald', 'keterangan' => 'Memohon ampunan'],
     ];
 }
 ?>
 
-<section id="sec-sholat" class="w-full snap-start bg-gradient-to-br from-white via-emerald-50 to-emerald-100 flex flex-col justify-center items-center px-4 md:px-8 py-12 md:py-16 relative overflow-hidden">
+<section id="sec-sholat" class="w-full min-h-[calc(100vh-64px)] snap-start bg-gradient-to-br from-white via-emerald-50 to-emerald-100 flex flex-col justify-center items-center px-4 md:px-8 py-8 md:py-12 relative overflow-hidden">
     <div class="max-w-7xl w-full mx-auto relative z-10">
         <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-6 md:mb-8">
             
@@ -91,21 +91,25 @@ if (isset($pdo)) {
             </div>
         </div>
         
-<!-- Grid Sholat Wajib -->
-<div id="content-fardhu" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full">
-    <?php if(!empty($sholatWajib)): ?>
-        <?php foreach($sholatWajib as $sholat): ?>
-        <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?>&langkah=1" 
-            class="bg-white border-2 border-emerald-100 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl hover:border-emerald-300 transition-all text-center group cursor-pointer transform hover:-translate-y-2 block">
-            <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-<?= $sholat['bg_color'] ?? 'emerald' ?>-100 to-<?= $sholat['bg_color'] ?? 'emerald' ?>-200 rounded-xl md:rounded-2xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-md group-hover:scale-110 transition">
-                <?= htmlspecialchars($sholat['icon'] ?? '📿') ?>
-            </div>
-            <h3 class="font-extrabold mt-2 md:mt-4 text-gray-900 text-sm md:text-lg"><?= htmlspecialchars($sholat['nama']) ?></h3>
-            <p class="text-xs md:text-sm text-emerald-600 font-semibold mt-1 md:mt-2 bg-emerald-50 px-2 md:px-3 py-0.5 md:py-1 rounded-full inline-block"><?= htmlspecialchars($sholat['rakaat']) ?></p>
-        </a>
-        <?php endforeach; ?>
-    <?php endif; ?>
-</div>
+        <!-- Grid Sholat Wajib -->
+        <div id="content-fardhu" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full">
+            <?php if(!empty($sholatWajib)): ?>
+                <?php foreach($sholatWajib as $sholat): ?>
+                <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?? 1 ?>&langkah=1" 
+                   class="bg-white border-2 border-emerald-100 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl hover:border-emerald-300 transition-all text-center group cursor-pointer transform hover:-translate-y-2 block">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-<?= $sholat['bg_color'] ?? 'emerald' ?>-100 to-<?= $sholat['bg_color'] ?? 'emerald' ?>-200 rounded-xl md:rounded-2xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-md group-hover:scale-110 transition">
+                        <?= htmlspecialchars($sholat['icon'] ?? '📿') ?>
+                    </div>
+                    <h3 class="font-extrabold mt-2 md:mt-4 text-gray-900 text-sm md:text-lg"><?= htmlspecialchars($sholat['nama']) ?></h3>
+                    <p class="text-xs md:text-sm text-emerald-600 font-semibold mt-1 md:mt-2 bg-emerald-50 px-2 md:px-3 py-0.5 md:py-1 rounded-full inline-block"><?= htmlspecialchars($sholat['rakaat']) ?></p>
+                </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-span-full text-center py-12">
+                    <p class="text-gray-500">Data sholat sedang dimuat...</p>
+                </div>
+            <?php endif; ?>
+        </div>
 
         <!-- Grid Sholat Sunnah -->
         <div id="content-sunnah" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full hidden">
@@ -130,4 +134,4 @@ if (isset($pdo)) {
             <?php endif; ?>
         </div>
     </div>
-</section>
+</section>  
