@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Reset & Base - FIX: Tambah selector * */
 * {
     margin: 0;
     padding: 0;
@@ -161,11 +161,4 @@ body {
 button:focus-visible {
     outline: 2px solid #10b981;
     outline-offset: 2px;
-}
-
-/* Arabic Font Support */
-.arabic-text {
-    font-family: 'Amiri', 'Traditional Arabic', 'Scheherazade', 'Arial', sans-serif;
-    direction: rtl;
-    unicode-bidi: embed;
 }

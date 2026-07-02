@@ -1,12 +1,7 @@
-<?php
-// Start output buffering untuk mencegah error headers already sent
-if (ob_get_level() == 0) ob_start();
-?>
-    <!DOCTYPE html>
-    <html lang="id">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahabat Sholat - Digital HPT Muhammadiyah</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,39 +25,55 @@ if (ob_get_level() == 0) ob_start();
 </head>
 <body class="bg-emerald-50 font-sans antialiased">
 
-    <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 bg-primary-dark z-50 shadow-lg">
+    <!-- HEADER - Sesuai Desain Referensi -->
+    <header class="fixed top-0 left-0 right-0 bg-emerald-600 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-14 sm:h-16">
+            <div class="flex justify-between items-center h-16">
                 
-                <!-- LOGO -->
-                <div class="flex items-center space-x-2 flex-shrink-0">
-                    <img src="assets/img/LOGO-SAHABAT SHOLAT.png" alt="Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
+                <!-- LOGO - Kiri -->
+                <div class="flex items-center space-x-3 flex-shrink-0">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-md">
+                        <img src="assets/img/LOGO-SAHABATSHOLAT.png" 
+                             alt="Logo Sahabat Sholat" 
+                             class="w-8 h-8 object-contain"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='🕌'">
+                    </div>
                     <div>
-                        <h1 class="text-white text-sm sm:text-lg font-extrabold leading-tight">SAHABAT SHOLAT</h1>
-                        <p class="text-emerald-200 text-[8px] sm:text-[10px] hidden sm:block">Digital HPT Muhammadiyah</p>
+                        <h1 class="text-white text-lg font-extrabold leading-tight tracking-wide">SAHABAT SHOLAT</h1>
+                        <p class="text-emerald-100 text-[10px]">Digital HPT Muhammadiyah</p>
                     </div>
                 </div>
 
-                <!-- DESKTOP NAV - Hanya di desktop (≥1024px) -->
+                <!-- DESKTOP NAVIGATION - Tengah -->
                 <nav class="hidden lg:flex items-center space-x-1">
-                    <button onclick="scrollToSection('sec-home')" class="nav-link-desktop px-3 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition">Home</button>
-                    <button onclick="scrollToSection('sec-sholat')" class="nav-link-desktop px-3 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition">Panduan Shalat</button>
-                    <button onclick="scrollToSection('sec-surah')" class="nav-link-desktop px-3 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition">Surah Pendek</button>
-                    <button class="px-3 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition">Tentang Kami</button>
+                    <button onclick="scrollToSection('sec-home')" class="nav-link-desktop px-4 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition" data-target="sec-home">
+                        Home
+                    </button>
+                    <button onclick="scrollToSection('sec-sholat')" class="nav-link-desktop px-4 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition" data-target="sec-sholat">
+                        Panduan Shalat
+                    </button>
+                    <button onclick="scrollToSection('sec-surah')" class="nav-link-desktop px-4 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition" data-target="sec-surah">
+                        Surah Pendek
+                    </button>
+                    <button class="px-4 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition">
+                        Tentang Kami
+                    </button>
                 </nav>
 
-                <!-- RIGHT SIDE -->
+                <!-- RIGHT SIDE - Mode Toggle + Hamburger -->
                 <div class="flex items-center space-x-2">
-                    <!-- Mode Toggle Desktop - Hanya di desktop -->
+                    <!-- Mode Toggle - Desktop -->
                     <div class="hidden lg:flex items-center bg-white/20 backdrop-blur-sm rounded-full p-1 border border-white/30">
-                        <button id="mode-anak" class="px-3 py-1 rounded-full text-xs font-bold bg-white text-primary-dark shadow-md">Mode Anak</button>
-                        <button id="mode-dewasa" class="px-3 py-1 rounded-full text-xs font-bold text-white hover:bg-white/10">Mode Dewasa</button>
+                        <button id="mode-anak" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-emerald-700 shadow-md transition">
+                            Mode Anak
+                        </button>
+                        <button id="mode-dewasa" class="px-4 py-1.5 rounded-full text-xs font-bold text-white hover:bg-white/10 transition">
+                            Mode Dewasa
+                        </button>
                     </div>
 
-                    <!-- HAMBURGER MENU - HANYA di tablet (md:hidden lg:hidden = tablet saja) -->
-                    <!-- Mobile TIDAK punya hamburger karena sudah ada bottom nav -->
-                    <button onclick="toggleMobileMenu()" class="hidden md:hidden lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition">
+                    <!-- HAMBURGER MENU - Mobile & Tablet -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -71,20 +82,32 @@ if (ob_get_level() == 0) ob_start();
             </div>
         </div>
 
-        <!-- MOBILE/TABLET MENU DROPDOWN - HANYA untuk tablet -->
-        <div id="mobile-menu" class="hidden md:hidden lg:hidden bg-white border-t border-emerald-100 shadow-lg">
+        <!-- MOBILE/TABLET MENU DROPDOWN -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-emerald-100 shadow-lg">
             <div class="px-4 py-3 space-y-2">
-                <button onclick="scrollToSection('sec-home'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition">🏠 Home</button>
-                <button onclick="scrollToSection('sec-sholat'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition">📿 Panduan Shalat</button>
-                <button onclick="scrollToSection('sec-surah'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition">📖 Surah Pendek</button>
-                <button class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition">️ Tentang Kami</button>
+                <button onclick="scrollToSection('sec-home'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition flex items-center gap-3">
+                    <span class="text-xl">🏠</span> Home
+                </button>
+                <button onclick="scrollToSection('sec-sholat'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition flex items-center gap-3">
+                    <span class="text-xl">📿</span> Panduan Shalat
+                </button>
+                <button onclick="scrollToSection('sec-surah'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition flex items-center gap-3">
+                    <span class="text-xl">📖</span> Surah Pendek
+                </button>
+                <button class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition flex items-center gap-3">
+                    <span class="text-xl">ℹ️</span> Tentang Kami
+                </button>
                 
-                <!-- Mode Toggle Tablet -->
+                <!-- Mode Toggle Mobile -->
                 <div class="pt-3 mt-3 border-t border-gray-200">
                     <p class="text-xs text-gray-500 font-semibold mb-2">Pilih Mode:</p>
                     <div class="flex bg-emerald-100 rounded-lg p-1">
-                        <button id="mode-anak-mobile" class="flex-1 px-3 py-2 rounded-md text-xs font-bold bg-white text-primary-dark"> Mode Anak</button>
-                        <button id="mode-dewasa-mobile" class="flex-1 px-3 py-2 rounded-md text-xs font-bold text-emerald-700">👨 Mode Dewasa</button>
+                        <button id="mode-anak-mobile" class="flex-1 px-3 py-2 rounded-md text-xs font-bold bg-white text-emerald-700 shadow-sm">
+                            👶 Mode Anak
+                        </button>
+                        <button id="mode-dewasa-mobile" class="flex-1 px-3 py-2 rounded-md text-xs font-bold text-emerald-700">
+                            👨 Mode Dewasa
+                        </button>
                     </div>
                 </div>
             </div>
