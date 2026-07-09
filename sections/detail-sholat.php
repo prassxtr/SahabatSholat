@@ -30,7 +30,7 @@ function generateGerakan($totalRakaat) {
         'langkah' => 'Berdiri tegak menghadap kiblat dengan niat sholat di dalam hati',
         'rakaat' => 0,
         'bacaan' => [
-            ['arab' => 'اُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ اَدَاءً ِللهِ تَعَالَى', 'latin' => 'Usholli fardhosh shubhi rok\'ataini mustaqbilal qiblati adaa\'an lillaahi ta\'aalaa', 'terjemahan' => 'Aku berniat sholat fardhu Shubuh dua rakaat menghadap kiblat karena Allah Ta\'ala']
+            ['arab' => '', 'latin' => 'Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Berdasarkan Himpunan Putusan Tarjih (HPT) Muhammadiyah, niat adalah amalan hati dan tidak ada tuntunan dari Nabi SAW untuk melafadzkannya secara lisan.']
         ]
     ];
     
