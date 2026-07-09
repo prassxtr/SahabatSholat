@@ -33,10 +33,11 @@ function generateGerakan($totalRakaat) {
     $step = 1;
    
     $gerakanList[$step++] = [
-        'nama' => 'Niat Sholat Shubuh',
+        'nama' => 'Niat Sholat',
         'deskripsi' => 'Niat dalam hati untuk melaksanakan sholat',
         'langkah' => 'Niat dilakukan dengan ikhlas di dalam hati. Tidak perlu dilafalkan secara lisan.',
         'rakaat' => 0,
+        'gambar' => '../assets/img/sholat/niat.png',
         'bacaan' => [
             ['arab' => 'النِّيَّةُ فِي الْقَلْبِ', 'latin' => 'An-niyyatu fil-qalb', 'terjemahan' => 'Niat tulus lillahi ta\'ala tanpa perlu dilafalkan secara lisan, memfokuskan hati menghadap Allah SWT.', 'audio_url' => 'assets/audio/niat.mp3']
         ]
@@ -47,6 +48,7 @@ function generateGerakan($totalRakaat) {
         'deskripsi' => 'Mengangkat kedua tangan sejajar telinga',
         'langkah' => 'Angkat kedua tangan sejajar telinga atau bahu sambil mengucapkan "Allahu Akbar", kemudian letakkan tangan kanan di atas tangan kiri di dada',
         'rakaat' => 1,
+        'gambar' => '../assets/img/sholat/takbir.png',
         'bacaan' => [
             ['arab' => 'اللهُ أَكْبَرُ', 'latin' => 'Allāhu Akbar', 'terjemahan' => 'Allah Maha Besar', 'audio_url' => 'assets/audio/takbir.mp3']
         ]
@@ -57,6 +59,7 @@ function generateGerakan($totalRakaat) {
         'deskripsi' => 'Membaca doa pembuka',
         'langkah' => 'Baca doa iftitah dengan khusyuk setelah meletakkan tangan di dada',
         'rakaat' => 1,
+        'gambar' => '../assets/img/sholat/iftitah.png',
         'bacaan' => [
             ['arab' => 'اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ', 'latin' => 'Allāhumma bā\'id bainī wa baina khaṭāyāya...', 'terjemahan' => 'Ya Allah, jauhkanlah aku dari dosa-dosaku sebagaimana Engkau jauhkan antara timur dan barat.', 'audio_url' => 'assets/audio/iftitah.mp3']
         ]
@@ -67,7 +70,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Membaca Al-Fatihah (Rakaat ' . $r . ')',
             'deskripsi' => 'Membaca surah Al-Fatihah',
             'langkah' => 'Baca Al-Fatihah dengan tartil dan tajwid yang benar',
-            'gambar' => '../assets/img/sholat/al-fatihah.png',
+            'gambar' => '../assets/img/Desain tanpa judul (1).png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.', 'audio_url' => 'assets/audio/fatihah1.mp3'],
@@ -85,6 +88,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Membaca Surah Pendek (Rakaat ' . $r . ')',
                 'deskripsi' => 'Membaca surah pendek setelah Al-Fatihah',
                 'langkah' => 'Pilih surah pendek yang sudah dihafal seperti Al-Ikhlas, Al-Falaq, atau An-Nas',
+                'gambar' => '../assets/img/sholat/surah-pendek.png',
                 'rakaat' => $r,
                 'bacaan' => [
                     ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.', 'audio_url' => 'assets/audio/ikhlas1.mp3'],
@@ -111,6 +115,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'I\'tidal (Rakaat ' . $r . ')',
             'deskripsi' => 'Bangkit dari rukuk',
             'langkah' => 'Bangkit berdiri tegak sambil membaca "Sami\'allahu liman hamidah", lalu baca "Rabbana lakal hamd"',
+            'gambar' => '../assets/img/sholat/itidal.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ', 'latin' => 'Sami\'allāhu liman amidah', 'terjemahan' => 'Allah Maha Mendengar orang yang memuji-Nya', 'audio_url' => 'assets/audio/itidal1.mp3'],
@@ -122,6 +127,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Sujud Pertama (Rakaat ' . $r . ')',
             'deskripsi' => 'Sujud dengan thumaininah',
             'langkah' => 'Letakkan 7 anggota sujud di lantai: dahi+hidung, 2 telapak tangan, 2 lutut, 2 ujung kaki. Baca "Subhana rabbiyal a\'la" 3x',
+            'gambar' => '../assets/img/sholat/sujud.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سُبْحَانَ رَبِّيَ الْأَعْلَى', 'latin' => 'Subḥāna rabbiyal-alā', 'terjemahan' => 'Mahasuci Tuhanku Yang Mahatinggi', 'audio_url' => 'assets/audio/sujud.mp3']
@@ -132,6 +138,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Duduk Antara Dua Sujud (Rakaat ' . $r . ')',
             'deskripsi' => 'Duduk iftirasy sambil membaca doa',
             'langkah' => 'Duduk di atas kaki kiri, telapak kaki kanan tegak. Baca "Rabbighfirli warhamni wajburni warfa\'ni warzuqni wahdini wa\'afini wa\'fu \'anni"',
+            'gambar' => '../assets/img/sholat/duduk-dua-sujud.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي', 'latin' => 'Rabbighfir lī warḥamnī wajburnī warfanī', 'terjemahan' => 'Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupilah aku, angkatlah aku', 'audio_url' => 'assets/audio/duduk.mp3']
@@ -142,6 +149,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Sujud Kedua (Rakaat ' . $r . ')',
             'deskripsi' => 'Sujud kedua dengan thumaininah',
             'langkah' => 'Sujud kembali seperti sujud pertama',
+            'gambar' => '../assets/img/sholat/sujud.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سُبْحَانَ رَبِّيَ الْأَعْلَى', 'latin' => 'Subḥāna rabbiyal-alā', 'terjemahan' => 'Mahasuci Tuhanku Yang Mahatinggi', 'audio_url' => 'assets/audio/sujud.mp3']
@@ -153,6 +161,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Tasyahud Awal',
                 'deskripsi' => 'Duduk iftirasy membaca tasyahud awal',
                 'langkah' => 'Duduk iftirasy: kaki kiri masuk bawah kaki kanan',
+                'gambar' => '../assets/img/sholat/tasyahud-awal.png',
                 'rakaat' => $r,
                 'bacaan' => [
                     ['arab' => 'التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ', 'latin' => 'At-taḥiyyātul-mubārakātus-ṣalawātus-ṭayyibātu lillāh', 'terjemahan' => 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah', 'audio_url' => 'assets/audio/tasyahud.mp3']
@@ -165,6 +174,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Berdiri untuk Rakaat ' . ($r + 1),
                 'deskripsi' => 'Bangkit berdiri untuk rakaat berikutnya',
                 'langkah' => 'Bangkit berdiri dengan tangan bertumpu pada lutut, baca Al-Fatihah dan surah pendek kembali',
+                'gambar' => '../assets/img/sholat/berdiri.png',
                 'rakaat' => $r,
                 'bacaan' => []
             ];
@@ -175,6 +185,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Tasyahud Akhir',
         'deskripsi' => 'Duduk tawarruk membaca tasyahud akhir dan shalawat',
         'langkah' => 'Duduk tawarruk: kaki kiri keluar dari bawah kaki kanan, baca tasyahud akhir dan shalawat Ibrahim',
+        'gambar' => '../assets/img/sholat/tasyahud-akhir.png',
         'rakaat' => $totalRakaat,
         'bacaan' => [
             ['arab' => 'التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ', 'latin' => 'At-taḥiyyātul-mubārakātus-ṣalawātus-ṭayyibātu lillāh', 'terjemahan' => 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah', 'audio_url' => 'assets/audio/tasyahud.mp3']
@@ -185,6 +196,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Salam',
         'deskripsi' => 'Menoleh ke kanan dan kiri mengucapkan salam',
         'langkah' => 'Menoleh ke kanan ucapkan "Assalamu\'alaikum warahmatullah", lalu ke kiri dengan ucapan yang sama',
+        'gambar' => '../assets/img/sholat/salam.png',
         'rakaat' => $totalRakaat,
         'bacaan' => [
             ['arab' => 'السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ', 'latin' => 'Assalāmu ʿalaikum wa ramatullāh', 'terjemahan' => 'Semoga keselamatan dan rahmat Allah tercurah kepadamu', 'audio_url' => 'assets/audio/salam.mp3']
@@ -291,6 +303,27 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         .toggle-switch.active::after { transform: translateX(24px); }
+        /* Image Container */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: #ecfdf5;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .image-fallback {
+            font-size: 5rem;
+            color: #10b981;
+        }
     </style>
 </head>
 <body class="bg-emerald-50 font-sans antialiased">
@@ -366,9 +399,25 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
             <div class="space-y-4">
                 <div class="bg-emerald-50 rounded-xl p-6 text-center border-2 border-emerald-200">
                     <h3 class="font-bold text-gray-900 mb-4 text-lg"><?= htmlspecialchars($gerakan['nama']) ?></h3>
-                    <div class="w-full h-64 bg-emerald-100 rounded-lg flex items-center justify-center">
-                        <span class="text-6xl text-emerald-600">🕌</span>
+                    
+                    <!-- Image Container dengan Fallback -->
+                    <div class="image-container">
+                        <?php if(!empty($gerakan['gambar'])): ?>
+                            <img src="<?= htmlspecialchars($gerakan['gambar']) ?>" 
+                                 alt="<?= htmlspecialchars($gerakan['nama']) ?>" 
+                                 id="gerakanImage"
+                                 onerror="handleImageError(this)">
+                        <?php else: ?>
+                            <div class="image-fallback">🕌</div>
+                        <?php endif; ?>
                     </div>
+                    
+                    <!-- Info Gambar (opsional) -->
+                    <?php if(!empty($gerakan['gambar'])): ?>
+                    <p class="text-xs text-gray-500 mt-2 italic">
+                        Ilustrasi: <?= htmlspecialchars($gerakan['nama']) ?>
+                    </p>
+                    <?php endif; ?>
                 </div>
                 
                 <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -466,6 +515,13 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
 </div>
 
 <script>
+// ============ IMAGE ERROR HANDLER ============
+function handleImageError(img) {
+    console.log('Gambar tidak ditemukan:', img.src);
+    const container = img.parentElement;
+    container.innerHTML = '<div class="image-fallback">🕌</div>';
+}
+
 // ============ AUDIO PLAYER LOGIC ============
 let autoplayEnabled = false;
 let currentAudioIndex = 0;
