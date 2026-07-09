@@ -37,7 +37,7 @@ function generateGerakan($totalRakaat) {
         'langkah' => 'Berdiri tegak menghadap kiblat dengan niat sholat di dalam hati',
         'rakaat' => 0,
         'bacaan' => [
-            ['arab' => '', 'latin' => ' Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Niat itu dilakukan di dalam hati ya, Nak. Tidak perlu diucapkan pakai mulut. Cukup berniat sungguh-sungguh ingin sholat karena Allah ']
+            ['arab' => '', 'latin' => ' Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Niat itu dilakukan di dalam hati ya, Nak. Tidak perlu diucapkan pakai mulut. Cukup berniat sungguh-sungguh ingin sholat karena Allah']
         ]
     ];
     
