@@ -6,14 +6,21 @@ header('Content-Type: text/html; charset=utf-8');
 $sholatId = isset($_GET['sholat']) ? (int)$_GET['sholat'] : 1;
 $langkah = isset($_GET['langkah']) ? (int)$_GET['langkah'] : 1;
 
-// Data sholat dengan jumlah rakaat
+// Data sholat dengan jumlah rakaat (DITAMBAHKAN SHOLAT SUNNAH)
 $sholatData = [
     1 => ['nama' => 'Subuh', 'rakaat' => 2],
     2 => ['nama' => 'Dzuhur', 'rakaat' => 4],
     3 => ['nama' => 'Ashar', 'rakaat' => 4],
     4 => ['nama' => 'Maghrib', 'rakaat' => 3],
     5 => ['nama' => 'Isya', 'rakaat' => 4],
+    // Tambahkan baris-baris di bawah ini:
+    6 => ['nama' => 'Tahajud', 'rakaat' => 2],
+    7 => ['nama' => 'Dhuha', 'rakaat' => 2],
+    8 => ['nama' => 'Hajat', 'rakaat' => 2],
+    9 => ['nama' => 'Istikharah', 'rakaat' => 2],
+    10 => ['nama' => 'Taubat', 'rakaat' => 2],
 ];
+
 
 $sholat = $sholatData[$sholatId] ?? $sholatData[1];
 $totalRakaat = $sholat['rakaat'];
@@ -22,7 +29,7 @@ $totalRakaat = $sholat['rakaat'];
 function generateGerakan($totalRakaat) {
     $gerakanList = [];
     $step = 1;
-    
+   
     // 1. Niat
     $gerakanList[$step++] = [
         'nama' => 'Niat Sholat',
@@ -31,7 +38,7 @@ function generateGerakan($totalRakaat) {
         'gambar' => '../assets/img/Desain tanpa judul (2).png',
         'rakaat' => 0,
         'bacaan' => [
-            ['arab' => 'اُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ اَدَاءً ِللهِ تَعَالَى', 'latin' => 'Usholli fardhosh shubhi rok\'ataini mustaqbilal qiblati adaa\'an lillaahi ta\'aalaa', 'terjemahan' => 'Aku berniat sholat fardhu Shubuh dua rakaat menghadap kiblat karena Allah Ta\'ala']
+            ['arab' => '', 'latin' => ' Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Niat itu dilakukan di dalam hati ya, Nak. Tidak perlu diucapkan pakai mulut. Cukup berniat sungguh-sungguh ingin sholat karena Allah']
         ]
     ];
     
@@ -85,9 +92,14 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Membaca Surah Pendek (Rakaat ' . $r . ')',
                 'deskripsi' => 'Membaca surah pendek setelah Al-Fatihah',
                 'langkah' => 'Pilih surah pendek yang sudah dihafal seperti Al-Ikhlas, Al-Falaq, atau An-Nas',
-                'gambar' => '../assets/img/sholat/surah-pendek.png',
                 'rakaat' => $r,
-                'bacaan' => []
+                'bacaan' => [
+                    ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang'],
+                    ['arab' => 'قُلْ هُوَ اللَّهُ أَحَدٌ', 'latin' => 'Qul huwallāhu aḥad', 'terjemahan' => 'Katakanlah: Dialah Allah, Yang Maha Esa'],
+                    ['arab' => 'اللَّهُ الصَّمَدُ', 'latin' => 'Allāhuṣ-ṣamad', 'terjemahan' => 'Allah adalah Tuhan yang bergantung kepada-Nya segala sesuatu'],
+                    ['arab' => 'لَمْ يَلِدْ وَلَمْ يُولَدْ', 'latin' => 'Lam yalid wa lam yūlad', 'terjemahan' => 'Dia tiada beranak dan tidak pula diperanakkan'],
+                    ['arab' => 'وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ', 'latin' => 'Wa lam yakul-lahu kufuwan aḥad', 'terjemahan' => 'Dan tidak ada seorangpun yang setara dengan Dia']
+                ]
             ];
         }
         

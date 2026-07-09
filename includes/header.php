@@ -55,9 +55,6 @@
                     <button onclick="scrollToSection('sec-surah')" class="nav-link-desktop px-4 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition" data-target="sec-surah">
                         Surah Pendek
                     </button>
-                    <button class="px-4 py-2 rounded-lg text-white text-sm font-semibold hover:bg-white/10 transition">
-                        Tentang Kami
-                    </button>
                 </nav>
 
                 <!-- RIGHT SIDE - Mode Toggle + Hamburger -->
@@ -94,9 +91,7 @@
                 <button onclick="scrollToSection('sec-surah'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition flex items-center gap-3">
                     <span class="text-xl">📖</span> Surah Pendek
                 </button>
-                <button class="w-full text-left px-4 py-3 rounded-lg text-gray-700 font-semibold hover:bg-emerald-50 transition flex items-center gap-3">
-                    <span class="text-xl">ℹ️</span> Tentang Kami
-                </button>
+
                 
                 <!-- Mode Toggle Mobile -->
                 <div class="pt-3 mt-3 border-t border-gray-200">
