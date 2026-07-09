@@ -73,7 +73,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Membaca Al-Fatihah (Rakaat ' . $r . ')',
             'deskripsi' => 'Membaca surah Al-Fatihah',
             'langkah' => 'Baca Al-Fatihah dengan tartil dan tajwid yang benar',
-            'gambar' => '../assets/img/sholat/al-fatihah.png',
+            'gambar' => '../assets/img/Desain tanpa judul (3).png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang'],
@@ -92,6 +92,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Membaca Surah Pendek (Rakaat ' . $r . ')',
                 'deskripsi' => 'Membaca surah pendek setelah Al-Fatihah',
                 'langkah' => 'Pilih surah pendek yang sudah dihafal seperti Al-Ikhlas, Al-Falaq, atau An-Nas',
+                'gambar' => '../assets/img/Desain tanpa judul (3).png',
                 'rakaat' => $r,
                 'bacaan' => [
                     ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang'],
@@ -108,7 +109,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Rukuk (Rakaat ' . $r . ')',
             'deskripsi' => 'Membungkuk dengan thumaininah',
             'langkah' => 'Bungkukkan badan hingga punggung rata, tangan memegang lutut',
-            'gambar' => '../assets/img/sholat/rukuk.png',
+            'gambar' => '../assets/img/Desain tanpa judul (4).png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سُبْحَانَ رَبِّيَ الْعَظِيمِ', 'latin' => 'Subḥāna rabbiyal-ʿaẓīm', 'terjemahan' => 'Mahasuci Tuhanku Yang Maha Agung']
