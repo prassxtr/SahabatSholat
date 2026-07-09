@@ -22,7 +22,7 @@ $totalRakaat = $sholat['rakaat'];
 function generateGerakan($totalRakaat) {
     $gerakanList = [];
     $step = 1;
-    
+   
     // 1. Niat
     $gerakanList[$step++] = [
         'nama' => 'Niat Sholat',
@@ -30,7 +30,7 @@ function generateGerakan($totalRakaat) {
         'langkah' => 'Berdiri tegak menghadap kiblat dengan niat sholat di dalam hati',
         'rakaat' => 0,
         'bacaan' => [
-            ['arab' => '', 'latin' => 'Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Berdasarkan Himpunan Putusan Tarjih (HPT) Muhammadiyah, niat adalah amalan hati dan tidak ada tuntunan dari Nabi SAW untuk melafadzkannya secara lisan.']
+            ['arab' => '', 'latin' => ' Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Berdasarkan Himpunan Putusan Tarjih (HPT) Muhammadiyah, niat adalah amalan hati dan tidak ada tuntunan dari Nabi SAW untuk melafadzkannya secara lisan.']
         ]
     ];
     
@@ -80,9 +80,15 @@ function generateGerakan($totalRakaat) {
             $gerakanList[$step++] = [
                 'nama' => 'Membaca Surah Pendek (Rakaat ' . $r . ')',
                 'deskripsi' => 'Membaca surah pendek setelah Al-Fatihah',
-                'langkah' => 'Pilih surah pendek yang sudah dihafal seperti Al-Ikhlas, Al-Falaq, atau An-Nas',
+                'langkah' => 'Baca surah pendek pilihanmu. Contoh: Surah Al-Ikhlas.',
                 'rakaat' => $r,
-                'bacaan' => []
+                'bacaan' => [
+                    ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang'],
+                    ['arab' => 'قُلْ هُوَ اللَّهُ أَحَدٌ', 'latin' => 'Qul huwallāhu aḥad', 'terjemahan' => 'Katakanlah: Dialah Allah, Yang Maha Esa'],
+                    ['arab' => 'اللَّهُ الصَّمَدُ', 'latin' => 'Allāhuṣ-ṣamad', 'terjemahan' => 'Allah adalah Tuhan yang bergantung kepada-Nya segala sesuatu'],
+                    ['arab' => 'لَمْ يَلِدْ وَلَمْ يُولَدْ', 'latin' => 'Lam yalid wa lam yūlad', 'terjemahan' => 'Dia tiada beranak dan tidak pula diperanakkan'],
+                    ['arab' => 'وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ', 'latin' => 'Wa lam yakul-lahu kufuwan aḥad', 'terjemahan' => 'Dan tidak ada seorangpun yang setara dengan Dia']
+                ]
             ];
         }
         
