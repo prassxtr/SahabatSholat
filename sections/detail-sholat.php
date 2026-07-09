@@ -6,14 +6,21 @@ header('Content-Type: text/html; charset=utf-8');
 $sholatId = isset($_GET['sholat']) ? (int)$_GET['sholat'] : 1;
 $langkah = isset($_GET['langkah']) ? (int)$_GET['langkah'] : 1;
 
-// Data sholat dengan jumlah rakaat
+// Data sholat dengan jumlah rakaat (DITAMBAHKAN SHOLAT SUNNAH)
 $sholatData = [
     1 => ['nama' => 'Subuh', 'rakaat' => 2],
     2 => ['nama' => 'Dzuhur', 'rakaat' => 4],
     3 => ['nama' => 'Ashar', 'rakaat' => 4],
     4 => ['nama' => 'Maghrib', 'rakaat' => 3],
     5 => ['nama' => 'Isya', 'rakaat' => 4],
+    // Tambahkan baris-baris di bawah ini:
+    6 => ['nama' => 'Tahajud', 'rakaat' => 2],
+    7 => ['nama' => 'Dhuha', 'rakaat' => 2],
+    8 => ['nama' => 'Hajat', 'rakaat' => 2],
+    9 => ['nama' => 'Istikharah', 'rakaat' => 2],
+    10 => ['nama' => 'Taubat', 'rakaat' => 2],
 ];
+
 
 $sholat = $sholatData[$sholatId] ?? $sholatData[1];
 $totalRakaat = $sholat['rakaat'];
@@ -30,7 +37,7 @@ function generateGerakan($totalRakaat) {
         'langkah' => 'Berdiri tegak menghadap kiblat dengan niat sholat di dalam hati',
         'rakaat' => 0,
         'bacaan' => [
-            ['arab' => '', 'latin' => ' Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Berdasarkan Himpunan Putusan Tarjih (HPT) Muhammadiyah, niat adalah amalan hati dan tidak ada tuntunan dari Nabi SAW untuk melafadzkannya secara lisan.']
+            ['arab' => '', 'latin' => ' Niat cukup di dalam hati, tidak diucapkan secara lisan.', 'terjemahan' => 'Niat itu dilakukan di dalam hati ya, Nak. Tidak perlu diucapkan pakai mulut. Cukup berniat sungguh-sungguh ingin sholat karena Allah ']
         ]
     ];
     

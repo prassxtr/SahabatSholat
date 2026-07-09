@@ -1,7 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
---
 -- Host: localhost:3306
 -- Generation Time: Jul 09, 2026 at 05:22 AM
 -- Server version: 10.9.2-MariaDB-log
@@ -10,7 +9,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,28 +29,28 @@ CREATE TABLE `ayat` (
   `id` int(11) NOT NULL,
   `id_surah` int(11) NOT NULL,
   `nomor_ayat` int(11) NOT NULL,
-  `teks_arab` text NOT NULL,
+  `teks_arab` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `teks_latin` text DEFAULT NULL,
   `terjemahan` text DEFAULT NULL,
   `audio_url` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `ayat`
 --
 
 INSERT INTO `ayat` (`id`, `id_surah`, `nomor_ayat`, `teks_arab`, `teks_latin`, `terjemahan`, `audio_url`) VALUES
-(1, 3, 1, '???? ???? ??????? ??????', 'Qul huwall?hu a?ad', 'Katakanlah (Nabi Muhammad), \"Dialah Allah Yang Maha Esa', 'assets/audio/ikhlas1.mp3'),
-(2, 3, 2, '??????? ?????????', 'All?hus-?amad', 'Allah tempat meminta segala sesuatu.', 'assets/audio/ikhlas2.mp3'),
-(3, 3, 3, '???? ?????? ?????? ???????', 'Lam yalid wa lam y?lad', 'Dia tidak beranak dan tidak pula diperanakkan', 'assets/audio/ikhlas3.mp3'),
-(4, 3, 4, '?????? ?????? ???? ??????? ??????', 'Wa lam yakun lah? kufuwan aad', 'serta tidak ada sesuatu pun yang setara dengan-Nya.\"', 'assets/audio/ikhlas4.mp3'),
-(5, 1, 1, '?????? ????? ??????????? ???????????', 'Bismill?hir-ra?m?nir-ra??m', 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.', 'assets/audio/fatihah1.mp3'),
-(6, 1, 2, '?????????? ??????? ????? ?????????????', 'Al-?amdu lill?hi rabbil-?lam?n', 'Segala puji bagi Allah, Tuhan seluruh alam.', 'assets/audio/fatihah2.mp3'),
-(7, 1, 3, '??????????? ???????????', 'Ar-ra?m?nir-ra??m', 'Yang Maha Pengasih, Maha Penyayang.', 'assets/audio/fatihah3.mp3'),
-(8, 1, 4, '?????? ?????? ?????????', 'M?liki yaumid-d?n', 'Pemilik hari pembalasan.', 'assets/audio/fatihah4.mp3'),
-(9, 1, 5, '???????? ???????? ?????????? ????????????', 'Iyy?ka na?budu wa iyy?ka nasta??n', 'Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan.', 'assets/audio/fatihah5.mp3'),
-(10, 1, 6, '????????? ?????????? ???????????????', 'Ihdina?-?ir??al-mustaq?m', 'Tunjukilah kami jalan yang lurus.', 'assets/audio/fatihah6.mp3'),
-(11, 1, 7, '??????? ?????????? ?????????? ?????????? ?? ?????? ????????????? ?????????? ????? ?????????????', '?ir??alla??na an?amta ?alaihim ghairil-magh??bi ?alaihim wa la?-??ll?n', '(yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.', 'assets/audio/fatihah7.mp3');
+(1, 3, 1, 'قُلْ هُوَ اللَّهُ أَحَدٌ', 'Qul huwallāhu aḥad', 'Katakanlah (Nabi Muhammad), \"Dialah Allah Yang Maha Esa', 'assets/audio/ikhlas1.mp3'),
+(2, 3, 2, 'اللَّهُ الصَّمَدُ', 'Allāhuṣ-amad', 'Allah tempat meminta segala sesuatu.', 'assets/audio/ikhlas2.mp3'),
+(3, 3, 3, 'لَمْ يَلِدْ وَلَمْ يُولَدْ', 'Lam yalid wa lam yūlad', 'Dia tidak beranak dan tidak pula diperanakkan', 'assets/audio/ikhlas3.mp3'),
+(4, 3, 4, 'وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ', 'Wa lam yakun lahū kufuwan aḥad', 'serta tidak ada sesuatu pun yang setara dengan-Nya.\"', 'assets/audio/ikhlas4.mp3'),
+(5, 1, 1, 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'Bismillāhir-ramānir-raḥīm', 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.', 'assets/audio/fatihah1.mp3'),
+(6, 1, 2, 'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ', 'Al-ḥamdu lillāhi rabbil-ʿālamīn', 'Segala puji bagi Allah, Tuhan seluruh alam.', 'assets/audio/fatihah2.mp3'),
+(7, 1, 3, 'الرَّحْمَنِ الرَّحِيمِ', 'Ar-raḥmānir-raḥīm', 'Yang Maha Pengasih, Maha Penyayang.', 'assets/audio/fatihah3.mp3'),
+(8, 1, 4, 'مَالِكِ يَوْمِ الدِّينِ', 'Māliki yaumid-dīn', 'Pemilik hari pembalasan.', 'assets/audio/fatihah4.mp3'),
+(9, 1, 5, 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ', 'Iyyāka naʿbudu wa iyyāka nastaīn', 'Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan.', 'assets/audio/fatihah5.mp3'),
+(10, 1, 6, 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ', 'Ihdinaṣ-irāṭal-mustaqīm', 'Tunjukilah kami jalan yang lurus.', 'assets/audio/fatihah6.mp3'),
+(11, 1, 7, 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ', 'Ṣirāallażīna anʿamta alaihim ghairil-maghḍūbi ʿalaihim wa laḍ-ḍāllīn', '(yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.', 'assets/audio/fatihah7.mp3');
 
 -- --------------------------------------------------------
 
@@ -64,27 +62,27 @@ CREATE TABLE `bacaan` (
   `id` int(11) NOT NULL,
   `id_gerakan` int(11) NOT NULL,
   `urutan` smallint(6) NOT NULL,
-  `teks_arab` text DEFAULT NULL,
+  `teks_arab` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `teks_latin` text DEFAULT NULL,
   `terjemahan` text DEFAULT NULL,
   `audio_url` varchar(255) DEFAULT NULL,
   `sumber` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `bacaan`
 --
 
 INSERT INTO `bacaan` (`id`, `id_gerakan`, `urutan`, `teks_arab`, `teks_latin`, `terjemahan`, `audio_url`, `sumber`) VALUES
-(1, 2, 1, '????? ????????', 'All?hu Akbar', 'Allah Maha Besar', 'assets/audio/takbir.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(2, 3, 1, '?????????? ??????? ??????? ???????? ?????????? ????? ????????? ?????? ??????????? ?????????????? ?????????? ???????? ???? ?????????? ????? ???????? ????????? ??????????? ???? ?????????? ?????????? ?????????? ???? ?????????? ?????????? ??????????? ???????????', 'All?humma b?\'id bain? wa baina kha??y?ya kam? b?\'adta bainal-masyriqi wal-maghrib. All?humma naqqin? min kha??y?ya kam? yunaqqats-tsaubul-abya?u minad-danas. All?humma ighsiln? min kha??y?ya bil-m?\'i wats-tsalji wal-barad', 'Ya Allah, jauhkanlah aku dari dosa-dosaku sebagaimana Engkau jauhkan antara timur dan barat. Ya Allah, bersihkanlah aku dari dosa-dosaku sebagaimana baju putih dibersihkan dari kotoran. Ya Allah, cucilah aku dari dosa-dosaku dengan air, salju, dan embun', 'assets/audio/iftitah.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(3, 6, 1, '????????? ??????? ??????????', 'Sub??na rabbiyal-?a??m', 'Mahasuci Tuhanku Yang Maha Agung', 'assets/audio/rukuk.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(4, 7, 1, '?????? ????? ?????? ????????', 'Sami\'all?hu liman ?amidah', 'Allah Maha Mendengar orang yang memuji-Nya', 'assets/audio/itidal1.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(5, 7, 2, '???????? ???? ????????? ??????? ???????? ???????? ?????????? ?????', 'Rabban? lakal-?amdu ?amdan kats?ran ayyiban mub?rakan f?h', 'Ya Tuhan kami, segala puji bagi-Mu, pujian yang banyak, baik, dan penuh berkah', 'assets/audio/itidal2.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(6, 8, 1, '????????? ??????? ??????????', 'Sub??na rabbiyal-a?l?', 'Mahasuci Tuhanku Yang Mahatinggi', 'assets/audio/sujud.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(7, 9, 1, '????? ??????? ??? ???????????? ???????????? ???????????? ???????????? ?????????? ?????????? ??????? ??????', 'Rabbighfir l? war?amn? wajburn? warfan? warzuqn? wahdin? wa ??fin? wafu ?ann?', 'Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupilah aku, angkatlah derajatku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku', 'assets/audio/duduk.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(8, 12, 1, '????????????? ??????????????? ???????????? ????????????? ???????? ?????????? ???????? ???????? ?????????? ?????????? ????? ?????????????? ?????????? ????????? ??????? ??????? ????? ?????????????? ???????? ???? ??? ?????? ?????? ????? ?????????? ????? ?????????? ??????? ?????', 'At-ta?iyy?tul-mub?rak?tus-?alaw?tus-?ayyib?tu lill?h. Assal?mu ?alaika ayyuhan-nabiyyu wa ra?matull?hi wa barak?tuh. Assal?mu ?alain? wa ?al? ?ib?dill?his-??li??n. Asyhadu an l? il?ha illall?h wa asyhadu anna Mu?ammadan ras?lull?h', 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah. Semoga keselamatan tercurah kepadamu wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah', 'assets/audio/tasyahud.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
-(9, 13, 1, '?????????? ?????????? ?????????? ?????', 'Assal?mu ?alaikum wa ra?matull?h', 'Semoga keselamatan dan rahmat Allah tercurah kepadamu', 'assets/audio/salam.mp3', 'HPT Muhammadiyah - Kitab Shalat');
+(1, 2, 1, 'اللهُ أَكْبَرُ', 'Allāhu Akbar', 'Allah Maha Besar', 'assets/audio/takbir.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(2, 3, 1, 'اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ اللَّهُمَّ نَقِّنِي مِنْ خَطَايَايَ كَمَا يُنَقَّى الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ', 'Allāhumma bā\'id bainī wa baina khaṭāyāya kamā bā\'adta bainal-masyriqi wal-maghrib. Allāhumma naqqinī min khaṭāyāya kamā yunaqqats-tsaubul-abyaḍu minad-danas. Allāhumma ighsilnī min khaṭāyāya bil-mā\'i wats-tsalji wal-barad', 'Ya Allah, jauhkanlah aku dari dosa-dosaku sebagaimana Engkau jauhkan antara timur dan barat. Ya Allah, bersihkanlah aku dari dosa-dosaku sebagaimana baju putih dibersihkan dari kotoran. Ya Allah, cucilah aku dari dosa-dosaku dengan air, salju, dan embun', 'assets/audio/iftitah.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(3, 6, 1, 'سُبْحَانَ رَبِّيَ الْعَظِيمِ', 'Subḥāna rabbiyal-ʿaẓīm', 'Mahasuci Tuhanku Yang Maha Agung', 'assets/audio/rukuk.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(4, 7, 1, 'سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ', 'Sami\'allāhu liman ḥamidah', 'Allah Maha Mendengar orang yang memuji-Nya', 'assets/audio/itidal1.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(5, 7, 2, 'رَبَّنَا لَكَ الْحَمْدُ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ', 'Rabbanā lakal-ḥamdu ḥamdan katsīran ṭayyiban mubārakan fīh', 'Ya Tuhan kami, segala puji bagi-Mu, pujian yang banyak, baik, dan penuh berkah', 'assets/audio/itidal2.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(6, 8, 1, 'سُبْحَانَ رَبِّيَ الْأَعْلَى', 'Subḥāna rabbiyal-a\'lā', 'Mahasuci Tuhanku Yang Mahatinggi', 'assets/audio/sujud.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(7, 9, 1, 'رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي', 'Rabbighfir lī warḥamnī wajburnī warfa\'nī warzuqnī wahdinī wa \'āfinī wa\'fu \'annī', 'Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupilah aku, angkatlah derajatku, berilah aku rezeki, berilah aku petunjuk, berilah aku kesehatan, dan maafkanlah aku', 'assets/audio/duduk.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(8, 12, 1, 'التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ', 'At-taḥiyyātul-mubārakātus-ṣalawātus-ṭayyibātu lillāh. Assalāmu \'alaika ayyuhan-nabiyyu wa ramatullāhi wa barakātuh. Assalāmu \'alainā wa \'alā \'ibādillāhis-āliḥīn. Asyhadu an lā ilāha illallāh wa asyhadu anna Muammadan rasūlullāh', 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah. Semoga keselamatan tercurah kepadamu wahai Nabi, beserta rahmat Allah dan berkah-Nya. Semoga keselamatan tercurah kepada kami dan hamba-hamba Allah yang saleh. Aku bersaksi bahwa tiada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah', 'assets/audio/tasyahud.mp3', 'HPT Muhammadiyah - Kitab Shalat'),
+(9, 13, 1, 'السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ', 'Assalāmu \'alaikum wa raḥmatullāh', 'Semoga keselamatan dan rahmat Allah tercurah kepadamu', 'assets/audio/salam.mp3', 'HPT Muhammadiyah - Kitab Shalat');
 
 -- --------------------------------------------------------
 
@@ -100,7 +98,7 @@ CREATE TABLE `gerakan` (
   `deskripsi` text DEFAULT NULL,
   `langkah_pembelajaran` text DEFAULT NULL,
   `gambar_url` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `gerakan`
@@ -130,7 +128,7 @@ INSERT INTO `gerakan` (`id`, `id_sholat`, `urutan`, `nama`, `deskripsi`, `langka
 CREATE TABLE `kategori` (
   `id` int(11) NOT NULL,
   `nama` enum('dewasa','anak') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `kategori`
@@ -152,7 +150,7 @@ CREATE TABLE `kelompok` (
   `prodi` varchar(100) NOT NULL,
   `mata_kuliah` varchar(100) NOT NULL,
   `dosen` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `kelompok`
@@ -214,12 +212,12 @@ CREATE TABLE `surah` (
 --
 
 INSERT INTO `surah` (`id`, `nomor`, `nama_latin`, `nama_arab`, `arti`, `jumlah_ayat`, `tempat_turun`) VALUES
-(1, 1, 'Al-Fatihah', '???????', 'Pembukaan', 7, 'Mekah'),
-(2, 108, 'Al-Kautsar', '??????', 'Nikmat yang Berlimpah', 3, 'Mekah'),
-(3, 112, 'Al-Ikhlas', '???????', 'Memurnikan Keikhlasan', 4, 'Mekah'),
-(4, 113, 'Al-Falaq', '?????', 'Waktu Subuh', 5, 'Mekah'),
-(5, 114, 'An-Nas', '?????', 'Manusia', 6, 'Mekah'),
-(6, 103, 'Al-\'Ashr', '?????', 'Demi Masa', 3, 'Mekah');
+(1, 1, 'Al-Fatihah', 'الفاتحة', 'Pembukaan', 7, 'Mekah'),
+(2, 108, 'Al-Kautsar', 'الكوثر', 'Nikmat yang Berlimpah', 3, 'Mekah'),
+(3, 112, 'Al-Ikhlas', 'الإخلاص', 'Memurnikan Keikhlasan', 4, 'Mekah'),
+(4, 113, 'Al-Falaq', 'الفلق', 'Waktu Subuh', 5, 'Mekah'),
+(5, 114, 'An-Nas', 'الناس', 'Manusia', 6, 'Mekah'),
+(6, 103, 'Al-\'Ashr', 'العصر', 'Demi Masa', 3, 'Mekah');
 
 --
 -- Indexes for dumped tables
