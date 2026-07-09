@@ -37,7 +37,7 @@ function generateGerakan($totalRakaat) {
         'deskripsi' => 'Niat dalam hati untuk melaksanakan sholat',
         'langkah' => 'Niat dilakukan dengan ikhlas di dalam hati. Tidak perlu dilafalkan secara lisan.',
         'rakaat' => 0,
-        'gambar' => '../assets/img/sholat/niat.png',
+        'gambar' => '../assets/img/berdiri.png',
         'bacaan' => [
             ['arab' => 'النِّيَّةُ فِي الْقَلْبِ', 'latin' => 'An-niyyatu fil-qalb', 'terjemahan' => 'Niat tulus lillahi ta\'ala tanpa perlu dilafalkan secara lisan, memfokuskan hati menghadap Allah SWT.', 'audio_url' => 'assets/audio/niat.mp3']
         ]
@@ -48,7 +48,7 @@ function generateGerakan($totalRakaat) {
         'deskripsi' => 'Mengangkat kedua tangan sejajar telinga',
         'langkah' => 'Angkat kedua tangan sejajar telinga atau bahu sambil mengucapkan "Allahu Akbar", kemudian letakkan tangan kanan di atas tangan kiri di dada',
         'rakaat' => 1,
-        'gambar' => '../assets/img/sholat/takbir.png',
+        'gambar' => '../assets/img/takbir.png',
         'bacaan' => [
             ['arab' => 'اللهُ أَكْبَرُ', 'latin' => 'Allāhu Akbar', 'terjemahan' => 'Allah Maha Besar', 'audio_url' => 'assets/audio/takbir.mp3']
         ]
@@ -59,55 +59,65 @@ function generateGerakan($totalRakaat) {
         'deskripsi' => 'Membaca doa pembuka',
         'langkah' => 'Baca doa iftitah dengan khusyuk setelah meletakkan tangan di dada',
         'rakaat' => 1,
-        'gambar' => '../assets/img/sholat/iftitah.png',
+        'gambar' => '../assets/img/tangan bersilang if.png',
         'bacaan' => [
-            ['arab' => 'اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ', 'latin' => 'Allāhumma bā\'id bainī wa baina khaṭāyāya...', 'terjemahan' => 'Ya Allah, jauhkanlah aku dari dosa-dosaku sebagaimana Engkau jauhkan antara timur dan barat.', 'audio_url' => 'assets/audio/iftitah.mp3']
-        ]
+            [
+    'arab' => 'اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنْ خَطَايَايَ كَمَا يُنَقَّى الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ',
+    'latin' => 'Allāhumma bā\'id bainī wa baina khaṭāyāya kamā bā\'adta bainal masyriqi wal maghrib, Allāhumma naqqinī min khaṭāyāya kamā yunaqqats tsaubul abyadu minad danas, Allāhumma ighsilnī min khaṭāyāya bil mā\'i wats tsalji wal barad',
+    'terjemahan' => 'Ya Allah, jauhkanlah aku dari dosa-dosaku sebagaimana Engkau jauhkan antara timur dan barat. Ya Allah, bersihkanlah aku dari dosa-dosaku sebagaimana dibersihkannya kain putih dari kotoran. Ya Allah, cucilah aku dari dosa-dosaku dengan air, salju, dan embun.',
+    'audio_url' => 'assets/audio/iftitah.mp3'
+] ]
     ];
     
-    for ($r = 1; $r <= $totalRakaat; $r++) {
-        $gerakanList[$step++] = [
-            'nama' => 'Membaca Al-Fatihah (Rakaat ' . $r . ')',
-            'deskripsi' => 'Membaca surah Al-Fatihah',
-            'langkah' => 'Baca Al-Fatihah dengan tartil dan tajwid yang benar',
-            'gambar' => '../assets/img/Desain tanpa judul (1).png',
-            'rakaat' => $r,
-            'bacaan' => [
-                ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.', 'audio_url' => 'assets/audio/fatihah1.mp3'],
-                ['arab' => 'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ', 'latin' => 'Al-ḥamdu lillāhi rabbil-ālamīn', 'terjemahan' => 'Segala puji bagi Allah, Tuhan seluruh alam.', 'audio_url' => 'assets/audio/fatihah2.mp3'],
-                ['arab' => 'الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Ar-raḥmānir-raḥīm', 'terjemahan' => 'Yang Maha Pengasih, Maha Penyayang.', 'audio_url' => 'assets/audio/fatihah3.mp3'],
-                ['arab' => 'مَالِكِ يَوْمِ الدِّينِ', 'latin' => 'Māliki yaumid-dīn', 'terjemahan' => 'Pemilik hari pembalasan.', 'audio_url' => 'assets/audio/fatihah4.mp3'],
-                ['arab' => 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ', 'latin' => 'Iyyāka naʿbudu wa iyyāka nastaʿīn', 'terjemahan' => 'Hanya kepada Engkaulah kami menyembah.', 'audio_url' => 'assets/audio/fatihah5.mp3'],
-                ['arab' => 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ', 'latin' => 'Ihdinaṣ-ṣirāal-mustaqīm', 'terjemahan' => 'Tunjukilah kami jalan yang lurus.', 'audio_url' => 'assets/audio/fatihah6.mp3'],
-                ['arab' => 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ', 'latin' => 'Ṣirāṭallażīna anʿamta ʿalaihim', 'terjemahan' => 'Jalan orang-orang yang telah Engkau beri nikmat.', 'audio_url' => 'assets/audio/fatihah7.mp3']
-            ]
-        ];
+for ($r = 1; $r <= $totalRakaat; $r++) {
+    $gerakanList[$step++] = [
+        'nama' => 'Membaca Al-Fatihah (Rakaat ' . $r . ')',
+        'deskripsi' => 'Membaca surah Al-Fatihah',
+        'langkah' => 'Baca Al-Fatihah dengan tartil dan tajwid yang benar',
+        'gambar' => '../assets/img/tangan bersilang if.png',
+        'rakaat' => $r,
+        'bacaan' => [
+            ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-ramānir-raīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.'],
+            ['arab' => 'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ', 'latin' => 'Al-ḥamdu lillāhi rabbil-ālamīn', 'terjemahan' => 'Segala puji bagi Allah, Tuhan seluruh alam.'],
+            ['arab' => 'الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Ar-raḥmānir-raīm', 'terjemahan' => 'Yang Maha Pengasih, Maha Penyayang.'],
+            ['arab' => 'مَالِكِ يَوْمِ الدِّينِ', 'latin' => 'Māliki yaumid-dīn', 'terjemahan' => 'Pemilik hari pembalasan.'],
+            ['arab' => 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ', 'latin' => 'Iyyāka naʿbudu wa iyyāka nastaʿīn', 'terjemahan' => 'Hanya kepada Engkaulah kami menyembah.'],
+            ['arab' => 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ', 'latin' => 'Ihdinaṣ-ṣirāal-mustaqīm', 'terjemahan' => 'Tunjukilah kami jalan yang lurus.'],
+            ['arab' => 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ', 'latin' => 'Ṣirāallażīna anʿamta alaihim', 'terjemahan' => 'Jalan orang-orang yang telah Engkau beri nikmat.', 'audio_url' => 'assets/audio/fatihah1.mp3']
+        ]
+    ];
         
-        if ($r <= 2) {
-            $gerakanList[$step++] = [
-                'nama' => 'Membaca Surah Pendek (Rakaat ' . $r . ')',
-                'deskripsi' => 'Membaca surah pendek setelah Al-Fatihah',
-                'langkah' => 'Pilih surah pendek yang sudah dihafal seperti Al-Ikhlas, Al-Falaq, atau An-Nas',
-                'gambar' => '../assets/img/sholat/surah-pendek.png',
-                'rakaat' => $r,
-                'bacaan' => [
-                    ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.', 'audio_url' => 'assets/audio/ikhlas1.mp3'],
-                    ['arab' => 'قُلْ هُوَ اللَّهُ أَحَدٌ', 'latin' => 'Qul huwallāhu aad', 'terjemahan' => 'Katakanlah: Dialah Allah, Yang Maha Esa.', 'audio_url' => 'assets/audio/ikhlas2.mp3'],
-                    ['arab' => 'اللَّهُ الصَّمَدُ', 'latin' => 'Allāhuṣ-ṣamad', 'terjemahan' => 'Allah adalah Tuhan yang bergantung kepada-Nya segala sesuatu.', 'audio_url' => 'assets/audio/ikhlas3.mp3'],
-                    ['arab' => 'لَمْ يَلِدْ وَلَمْ يُولَدْ', 'latin' => 'Lam yalid wa lam yūlad', 'terjemahan' => 'Dia tiada beranak dan tidak pula diperanakkan.', 'audio_url' => 'assets/audio/ikhlas4.mp3'],
-                    ['arab' => 'وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ', 'latin' => 'Wa lam yakul-lahu kufuwan aḥad', 'terjemahan' => 'Dan tidak ada seorangpun yang setara dengan Dia.', 'audio_url' => 'assets/audio/ikhlas5.mp3']
-                ]
-            ];
-        }
+if ($r <= 2) {
+    $gerakanList[$step++] = [
+        'nama' => 'Membaca Surah Al-Ma\'un (Rakaat ' . $r . ')',
+        'deskripsi' => 'Membaca Surah Al-Ma\'un setelah Al-Fatihah',
+        'langkah' => 'Baca Surah Al-Ma\'un dengan tartil dan tajwid yang benar',
+        'gambar' => '../assets/img/tangan bersilang if.png',
+        'rakaat' => $r,
+        'bacaan' => [
+            ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.'],
+            ['arab' => 'أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ', 'latin' => 'Ara\'aitallażī yukażżibu bid-dīn', 'terjemahan' => 'Tahukah kamu (orang) yang mendustakan agama?'],
+            ['arab' => 'فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ', 'latin' => 'Fażālikallażī yadu\'ul-yatīm', 'terjemahan' => 'Maka itulah orang yang menghardik anak yatim.'],
+            ['arab' => 'وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ', 'latin' => 'Wa lā yaḥuḍḍu \'alā ṭa\'āmil-miskīn', 'terjemahan' => 'Dan tidak menganjurkan memberi makan orang miskin.'],
+            ['arab' => 'فَوَيْلٌ لِّلْمُصَلِّينَ', 'latin' => 'Fawaylul-lil-muṣallīn', 'terjemahan' => 'Maka celakalah bagi orang-orang yang shalat.'],
+            ['arab' => 'الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ', 'latin' => 'Allażīna hum \'an ṣalātihim sāhūn', 'terjemahan' => '(Yaitu) orang-orang yang lalai dari shalatnya.'],
+            ['arab' => 'الَّذِينَ هُمْ يُرَاءُونَ', 'latin' => 'Allażīna hum yurā\'ūn', 'terjemahan' => 'Orang-orang yang berbuat riya.'],
+            ['arab' => 'وَيَمْنَعُونَ الْمَاعُونَ', 'latin' => 'Wa yamna\'ūnal-mā\'ūn', 'terjemahan' => 'Dan enggan (memberikan) bantuan.', 'audio_url' => 'assets/audio/maun1.mp3']
+        ]
+    ];
+}
         
         $gerakanList[$step++] = [
             'nama' => 'Rukuk (Rakaat ' . $r . ')',
             'deskripsi' => 'Membungkuk dengan thumaininah',
             'langkah' => 'Bungkukkan badan hingga punggung rata, tangan memegang lutut',
-            'gambar' => '../assets/img/sholat/rukuk.png',
+            'gambar' => '../assets/img/ruku.png',
             'rakaat' => $r,
             'bacaan' => [
-                ['arab' => 'سُبْحَانَ رَبِّيَ الْعَظِيمِ', 'latin' => 'Subḥāna rabbiyal-ʿaẓīm', 'terjemahan' => 'Mahasuci Tuhanku Yang Maha Agung', 'audio_url' => 'assets/audio/rukuk.mp3']
+                [ 'arab' => 'سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي',
+        'latin' => 'Subānaka Allāhumma rabbanā wa biḥamdika Allāhumma ighfir lī',
+        'terjemahan' => 'Mahasuci Engkau ya Allah, Tuhan kami, dan segala puji bagi-Mu. Ya Allah, ampunilah aku.',
+        'audio_url' => 'assets/audio/rukuk.mp3']
             ]
         ];
         
@@ -115,11 +125,14 @@ function generateGerakan($totalRakaat) {
             'nama' => 'I\'tidal (Rakaat ' . $r . ')',
             'deskripsi' => 'Bangkit dari rukuk',
             'langkah' => 'Bangkit berdiri tegak sambil membaca "Sami\'allahu liman hamidah", lalu baca "Rabbana lakal hamd"',
-            'gambar' => '../assets/img/sholat/itidal.png',
+            'gambar' => '../assets/img/berdiri.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ', 'latin' => 'Sami\'allāhu liman amidah', 'terjemahan' => 'Allah Maha Mendengar orang yang memuji-Nya', 'audio_url' => 'assets/audio/itidal1.mp3'],
-                ['arab' => 'رَبَّنَا لَكَ الْحَمْدُ', 'latin' => 'Rabbanā lakal-ḥamd', 'terjemahan' => 'Ya Tuhan kami, segala puji bagi-Mu', 'audio_url' => 'assets/audio/itidal2.mp3']
+                [ 'arab' => 'رَبَّنَا لَكَ الْحَمْدُ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ',
+            'latin' => 'Rabbanā lakal-ḥamdu ḥamdan katsīran ṭayyiban mubārakan fīh',
+            'terjemahan' => 'Ya Tuhan kami, segala puji bagi-Mu, pujian yang banyak, baik, dan penuh berkah.',
+            'audio_url' => 'assets/audio/itidal2.mp3']
             ]
         ];
         
@@ -127,10 +140,13 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Sujud Pertama (Rakaat ' . $r . ')',
             'deskripsi' => 'Sujud dengan thumaininah',
             'langkah' => 'Letakkan 7 anggota sujud di lantai: dahi+hidung, 2 telapak tangan, 2 lutut, 2 ujung kaki. Baca "Subhana rabbiyal a\'la" 3x',
-            'gambar' => '../assets/img/sholat/sujud.png',
+            'gambar' => '../assets/img/sujud.png',
             'rakaat' => $r,
             'bacaan' => [
-                ['arab' => 'سُبْحَانَ رَبِّيَ الْأَعْلَى', 'latin' => 'Subḥāna rabbiyal-alā', 'terjemahan' => 'Mahasuci Tuhanku Yang Mahatinggi', 'audio_url' => 'assets/audio/sujud.mp3']
+                [ 'arab' => 'سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ اللَّهُمَّ اغْفِرْ لِي',
+        'latin' => 'Subānaka Allāhumma rabbanā wa biḥamdika Allāhumma ighfir lī',
+        'terjemahan' => 'Mahasuci Engkau ya Allah, Tuhan kami, dan segala puji bagi-Mu. Ya Allah, ampunilah aku.',
+        'audio_url' => 'assets/audio/sujud.mp3']
             ]
         ];
         
@@ -138,10 +154,13 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Duduk Antara Dua Sujud (Rakaat ' . $r . ')',
             'deskripsi' => 'Duduk iftirasy sambil membaca doa',
             'langkah' => 'Duduk di atas kaki kiri, telapak kaki kanan tegak. Baca "Rabbighfirli warhamni wajburni warfa\'ni warzuqni wahdini wa\'afini wa\'fu \'anni"',
-            'gambar' => '../assets/img/sholat/duduk-dua-sujud.png',
+            'gambar' => '../assets/img/duduk diantara dua sujud.png',
             'rakaat' => $r,
             'bacaan' => [
-                ['arab' => 'رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي', 'latin' => 'Rabbighfir lī warḥamnī wajburnī warfanī', 'terjemahan' => 'Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupilah aku, angkatlah aku', 'audio_url' => 'assets/audio/duduk.mp3']
+                [ 'arab' => 'رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَاهْدِنِي وَارْزُقْنِي',
+    'latin' => 'Rabbighfir lī warḥamnī wajburnī wahdinī warzuqnī',
+    'terjemahan' => 'Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupilah aku, berilah aku petunjuk, dan berilah aku rezeki.',
+    'audio_url' => 'assets/audio/duduk.mp3']
             ]
         ];
         
@@ -149,7 +168,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Sujud Kedua (Rakaat ' . $r . ')',
             'deskripsi' => 'Sujud kedua dengan thumaininah',
             'langkah' => 'Sujud kembali seperti sujud pertama',
-            'gambar' => '../assets/img/sholat/sujud.png',
+            'gambar' => '../assets/img/sujud.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سُبْحَانَ رَبِّيَ الْأَعْلَى', 'latin' => 'Subḥāna rabbiyal-alā', 'terjemahan' => 'Mahasuci Tuhanku Yang Mahatinggi', 'audio_url' => 'assets/audio/sujud.mp3']
@@ -161,7 +180,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Tasyahud Awal',
                 'deskripsi' => 'Duduk iftirasy membaca tasyahud awal',
                 'langkah' => 'Duduk iftirasy: kaki kiri masuk bawah kaki kanan',
-                'gambar' => '../assets/img/sholat/tasyahud-awal.png',
+                'gambar' => '../assets/img/duduk diantara dua sujud.png',
                 'rakaat' => $r,
                 'bacaan' => [
                     ['arab' => 'التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ', 'latin' => 'At-taḥiyyātul-mubārakātus-ṣalawātus-ṭayyibātu lillāh', 'terjemahan' => 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah', 'audio_url' => 'assets/audio/tasyahud.mp3']
@@ -174,7 +193,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Berdiri untuk Rakaat ' . ($r + 1),
                 'deskripsi' => 'Bangkit berdiri untuk rakaat berikutnya',
                 'langkah' => 'Bangkit berdiri dengan tangan bertumpu pada lutut, baca Al-Fatihah dan surah pendek kembali',
-                'gambar' => '../assets/img/sholat/berdiri.png',
+                'gambar' => '../assets/img/berdiri.png',
                 'rakaat' => $r,
                 'bacaan' => []
             ];
@@ -185,7 +204,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Tasyahud Akhir',
         'deskripsi' => 'Duduk tawarruk membaca tasyahud akhir dan shalawat',
         'langkah' => 'Duduk tawarruk: kaki kiri keluar dari bawah kaki kanan, baca tasyahud akhir dan shalawat Ibrahim',
-        'gambar' => '../assets/img/sholat/tasyahud-akhir.png',
+        'gambar' => '../assets/img/tahyad.png',
         'rakaat' => $totalRakaat,
         'bacaan' => [
             ['arab' => 'التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ', 'latin' => 'At-taḥiyyātul-mubārakātus-ṣalawātus-ṭayyibātu lillāh', 'terjemahan' => 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah', 'audio_url' => 'assets/audio/tasyahud.mp3']
@@ -196,7 +215,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Salam',
         'deskripsi' => 'Menoleh ke kanan dan kiri mengucapkan salam',
         'langkah' => 'Menoleh ke kanan ucapkan "Assalamu\'alaikum warahmatullah", lalu ke kiri dengan ucapan yang sama',
-        'gambar' => '../assets/img/sholat/salam.png',
+        'gambar' => '../assets/img/salam.pngg',
         'rakaat' => $totalRakaat,
         'bacaan' => [
             ['arab' => 'السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ', 'latin' => 'Assalāmu ʿalaikum wa ramatullāh', 'terjemahan' => 'Semoga keselamatan dan rahmat Allah tercurah kepadamu', 'audio_url' => 'assets/audio/salam.mp3']
@@ -480,7 +499,7 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
                 <!-- Tombol Dengar Suara -->
                 <button onclick="playAllAudio()" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition flex items-center justify-center gap-2 shadow-lg mt-4">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                    Dengar Semua Bacaan
+                    Dengar Semua Bacaan 
                 </button>
             </div>
         </div>
