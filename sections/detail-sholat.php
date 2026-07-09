@@ -28,6 +28,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Niat Sholat',
         'deskripsi' => 'Niat dalam hati untuk melaksanakan sholat',
         'langkah' => 'Berdiri tegak menghadap kiblat dengan niat sholat di dalam hati',
+        'gambar' => '../assets/img/Desain tanpa judul (2).png',
         'rakaat' => 0,
         'bacaan' => [
             ['arab' => 'اُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ اَدَاءً ِللهِ تَعَالَى', 'latin' => 'Usholli fardhosh shubhi rok\'ataini mustaqbilal qiblati adaa\'an lillaahi ta\'aalaa', 'terjemahan' => 'Aku berniat sholat fardhu Shubuh dua rakaat menghadap kiblat karena Allah Ta\'ala']
@@ -39,6 +40,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Takbiratul Ihram',
         'deskripsi' => 'Mengangkat kedua tangan sejajar telinga',
         'langkah' => 'Angkat kedua tangan sejajar telinga sambil mengucapkan "Allahu Akbar"',
+        'gambar' => '../assets/img/Desain tanpa judul (1).png',
         'rakaat' => 1,
         'bacaan' => [
             ['arab' => 'اللهُ أَكْبَرُ', 'latin' => 'Allāhu Akbar', 'terjemahan' => 'Allah Maha Besar']
@@ -50,6 +52,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Doa Iftitah',
         'deskripsi' => 'Membaca doa pembuka',
         'langkah' => 'Baca doa iftitah dengan khusyuk setelah meletakkan tangan di dada',
+        'gambar' => '../assets/img/Desain tanpa judul (3).png',
         'rakaat' => 1,
         'bacaan' => [
             ['arab' => 'اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ', 'latin' => 'Allāhumma bā\'id bainī wa baina khaṭāyāya kamā bā\'adta bainal-masyriqi wal-maghrib', 'terjemahan' => 'Ya Allah, jauhkanlah aku dari dosa-dosaku sebagaimana Engkau jauhkan antara timur dan barat']
@@ -63,6 +66,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Membaca Al-Fatihah (Rakaat ' . $r . ')',
             'deskripsi' => 'Membaca surah Al-Fatihah',
             'langkah' => 'Baca Al-Fatihah dengan tartil dan tajwid yang benar',
+            'gambar' => '../assets/img/sholat/al-fatihah.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Bismillāhir-raḥmānir-raḥīm', 'terjemahan' => 'Dengan nama Allah Yang Maha Pengasih, Maha Penyayang'],
@@ -70,7 +74,7 @@ function generateGerakan($totalRakaat) {
                 ['arab' => 'الرَّحْمَنِ الرَّحِيمِ', 'latin' => 'Ar-raḥmānir-raḥīm', 'terjemahan' => 'Yang Maha Pengasih, Maha Penyayang'],
                 ['arab' => 'مَالِكِ يَوْمِ الدِّينِ', 'latin' => 'Māliki yaumid-dīn', 'terjemahan' => 'Pemilik hari pembalasan'],
                 ['arab' => 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ', 'latin' => 'Iyyāka naʿbudu wa iyyāka nastaʿīn', 'terjemahan' => 'Hanya kepada Engkaulah kami menyembah'],
-                ['arab' => 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ', 'latin' => 'Ihdinaṣ-ṣirāṭal-mustaqīm', 'terjemahan' => 'Tunjukilah kami jalan yang lurus'],
+                ['arab' => 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ', 'latin' => 'Ihdinaṣ-irāṭal-mustaqīm', 'terjemahan' => 'Tunjukilah kami jalan yang lurus'],
                 ['arab' => 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ', 'latin' => 'Ṣirāṭallażīna anʿamta ʿalaihim', 'terjemahan' => 'Jalan orang-orang yang telah Engkau beri nikmat']
             ]
         ];
@@ -81,6 +85,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Membaca Surah Pendek (Rakaat ' . $r . ')',
                 'deskripsi' => 'Membaca surah pendek setelah Al-Fatihah',
                 'langkah' => 'Pilih surah pendek yang sudah dihafal seperti Al-Ikhlas, Al-Falaq, atau An-Nas',
+                'gambar' => '../assets/img/sholat/surah-pendek.png',
                 'rakaat' => $r,
                 'bacaan' => []
             ];
@@ -91,6 +96,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Rukuk (Rakaat ' . $r . ')',
             'deskripsi' => 'Membungkuk dengan thumaininah',
             'langkah' => 'Bungkukkan badan hingga punggung rata, tangan memegang lutut',
+            'gambar' => '../assets/img/sholat/rukuk.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سُبْحَانَ رَبِّيَ الْعَظِيمِ', 'latin' => 'Subḥāna rabbiyal-ʿaẓīm', 'terjemahan' => 'Mahasuci Tuhanku Yang Maha Agung']
@@ -102,6 +108,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'I\'tidal (Rakaat ' . $r . ')',
             'deskripsi' => 'Bangkit dari rukuk',
             'langkah' => 'Bangkit berdiri tegak sambil membaca doa i\'tidal',
+            'gambar' => '../assets/img/sholat/itidal.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ', 'latin' => 'Sami\'allāhu liman ḥamidah', 'terjemahan' => 'Allah Maha Mendengar orang yang memuji-Nya'],
@@ -114,6 +121,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Sujud Pertama (Rakaat ' . $r . ')',
             'deskripsi' => 'Sujud dengan thumaininah',
             'langkah' => 'Letakkan 7 anggota sujud: dahi+hidung, 2 telapak tangan, 2 lutut, 2 ujung kaki',
+            'gambar' => '../assets/img/sholat/sujud.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سُبْحَانَ رَبِّيَ الْأَعْلَى', 'latin' => 'Subḥāna rabbiyal-aʿlā', 'terjemahan' => 'Mahasuci Tuhanku Yang Mahatinggi']
@@ -125,6 +133,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Duduk Antara Dua Sujud (Rakaat ' . $r . ')',
             'deskripsi' => 'Duduk iftirasy sambil membaca doa',
             'langkah' => 'Duduk di atas kaki kiri, telapak kaki kanan tegak',
+            'gambar' => '../assets/img/sholat/duduk-2-sujud.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي', 'latin' => 'Rabbighfir lī warḥamnī wajburnī warfanī', 'terjemahan' => 'Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupilah aku, angkatlah aku']
@@ -136,6 +145,7 @@ function generateGerakan($totalRakaat) {
             'nama' => 'Sujud Kedua (Rakaat ' . $r . ')',
             'deskripsi' => 'Sujud kedua dengan thumaininah',
             'langkah' => 'Sujud kembali seperti sujud pertama',
+            'gambar' => '../assets/img/sholat/sujud.png',
             'rakaat' => $r,
             'bacaan' => [
                 ['arab' => 'سُبْحَانَ رَبِّيَ الْأَعْلَى', 'latin' => 'Subḥāna rabbiyal-aʿlā', 'terjemahan' => 'Mahasuci Tuhanku Yang Mahatinggi']
@@ -148,6 +158,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Tasyahud Awal',
                 'deskripsi' => 'Duduk iftirasy membaca tasyahud awal',
                 'langkah' => 'Duduk iftirasy: kaki kiri masuk bawah kaki kanan',
+                'gambar' => '../assets/img/sholat/tasyahud-awal.png',
                 'rakaat' => $r,
                 'bacaan' => [
                     ['arab' => 'التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ', 'latin' => 'At-taḥiyyātul-mubārakātus-ṣalawātus-ṭayyibātu lillāh', 'terjemahan' => 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah']
@@ -161,6 +172,7 @@ function generateGerakan($totalRakaat) {
                 'nama' => 'Berdiri untuk Rakaat ' . ($r + 1),
                 'deskripsi' => 'Bangkit berdiri untuk rakaat berikutnya',
                 'langkah' => 'Bangkit berdiri dengan tangan bertumpu pada lutut',
+                'gambar' => '../assets/img/sholat/berdiri.png',
                 'rakaat' => $r,
                 'bacaan' => []
             ];
@@ -172,6 +184,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Tasyahud Akhir',
         'deskripsi' => 'Duduk tawarruk membaca tasyahud akhir dan shalawat',
         'langkah' => 'Duduk tawarruk: kaki kiri keluar dari bawah kaki kanan',
+        'gambar' => '../assets/img/sholat/tasyahud-akhir.png',
         'rakaat' => $totalRakaat,
         'bacaan' => [
             ['arab' => 'التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ', 'latin' => 'At-taḥiyyātul-mubārakātus-ṣalawātus-ṭayyibātu lillāh', 'terjemahan' => 'Segala penghormatan, keberkahan, shalawat, dan kebaikan adalah milik Allah']
@@ -183,6 +196,7 @@ function generateGerakan($totalRakaat) {
         'nama' => 'Salam',
         'deskripsi' => 'Menoleh ke kanan dan kiri mengucapkan salam',
         'langkah' => 'Menoleh ke kanan dan kiri mengucapkan "Assalamu\'alaikum warahmatullah"',
+        'gambar' => '../assets/img/sholat/salam.png',
         'rakaat' => $totalRakaat,
         'bacaan' => [
             ['arab' => 'السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ', 'latin' => 'Assalāmu ʿalaikum wa raḥmatullāh', 'terjemahan' => 'Semoga keselamatan dan rahmat Allah tercurah kepadamu']
@@ -318,9 +332,19 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
                 <div class="space-y-4">
                     <div class="bg-emerald-50 rounded-xl p-6 text-center border-2 border-emerald-200">
                         <h3 class="font-bold text-gray-900 mb-4 text-lg"><?= $gerakan['nama'] ?></h3>
-                        <div class="w-full h-64 bg-emerald-100 rounded-lg flex items-center justify-center">
-                            <span class="text-6xl text-emerald-600"><?= $gerakan['nama'] ?></span>
+                        
+                        <!-- GAMBAR GERAKAN -->
+                        <div class="w-full h-64 bg-emerald-100 rounded-lg flex items-center justify-center overflow-hidden border-2 border-emerald-200">
+                            <?php if(!empty($gerakan['gambar']) && file_exists($gerakan['gambar'])): ?>
+                                <img src="<?= $gerakan['gambar'] ?>" 
+                                     alt="<?= $gerakan['nama'] ?>" 
+                                     class="w-full h-full object-contain"
+                                     onerror="this.parentElement.innerHTML='<span class=\'text-6xl text-emerald-600\'>📷 <?= $gerakan['nama'] ?></span>'">
+                            <?php else: ?>
+                                <span class="text-6xl text-emerald-600">📷</span>
+                            <?php endif; ?>
                         </div>
+                        
                     </div>
                     
                     <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -378,7 +402,6 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
                 Kembali
             </a>
             <?php else: ?>
-            <!-- ✅ FIX: Pakai ../ untuk naik ke root folder -->
             <a href="../index.php#sec-sholat" class="bg-white border-2 border-emerald-200 text-emerald-700 font-bold px-6 py-3 rounded-xl hover:bg-emerald-50 transition flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -395,7 +418,6 @@ $nextLangkah = $langkah < $totalLangkah ? $langkah + 1 : null;
                 </svg>
             </a>
             <?php else: ?>
-            <!-- ✅ FIX: Pakai ../ untuk naik ke root folder -->
             <a href="../index.php#sec-sholat" class="bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-emerald-700 transition flex items-center gap-2 shadow-lg">
                 Selesai
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
