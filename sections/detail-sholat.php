@@ -31,7 +31,7 @@ $totalRakaat = $sholat['rakaat'];
 function generateGerakan($totalRakaat) {
     $gerakanList = [];
     $step = 1;
-   
+
     $gerakanList[$step++] = [
         'nama' => 'Niat Sholat',
         'deskripsi' => 'Niat dalam hati untuk melaksanakan sholat',
