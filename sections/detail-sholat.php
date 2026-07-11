@@ -37,7 +37,7 @@ function generateGerakan($totalRakaat) {
         'deskripsi' => 'Niat dalam hati untuk melaksanakan sholat',
         'langkah' => 'Niat dilakukan dengan ikhlas di dalam hati. Tidak perlu dilafalkan secara lisan.',
         'rakaat' => 0,
-        'gambar' => '../assets/img/sholat/niat.png',
+        'gambar' => '..assets/img/berdiri.png',
         'bacaan' => [
             ['arab' => 'النِّيَّةُ فِي الْقَلْبِ', 'latin' => 'An-niyyatu fil-qalb', 'terjemahan' => 'Niat tulus lillahi ta\'ala tanpa perlu dilafalkan secara lisan, memfokuskan hati menghadap Allah SWT.', 'audio_url' => 'assets/audio/niat.mp3']
         ]
@@ -48,7 +48,7 @@ function generateGerakan($totalRakaat) {
         'deskripsi' => 'Mengangkat kedua tangan sejajar telinga',
         'langkah' => 'Angkat kedua tangan sejajar telinga atau bahu sambil mengucapkan "Allahu Akbar", kemudian letakkan tangan kanan di atas tangan kiri di dada',
         'rakaat' => 1,
-        'gambar' => '../assets/img/sholat/takbir.png',
+        'gambar' => '..assets/img/ruku.png',
         'bacaan' => [
             ['arab' => 'اللهُ أَكْبَرُ', 'latin' => 'Allāhu Akbar', 'terjemahan' => 'Allah Maha Besar', 'audio_url' => 'assets/audio/takbir.mp3']
         ]
