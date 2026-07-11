@@ -85,7 +85,7 @@ if (isset($pdo)) {
         <div id="content-fardhu" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full">
             <?php if(!empty($sholatWajib)): ?>
             <?php foreach($sholatWajib as $sholat): ?>
-            <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?? 1 ?>&langkah=1&mode=dewasa"
+            <a href="sections/detail-sholat-dewasa.php?sholat=<?= $sholat['id'] ?? 1 ?>&langkah=1&mode=dewasa"
                class="bg-white border border-slate-200 p-4 md:p-6 rounded-xl shadow-md hover:shadow-lg hover:border-slate-400 transition-all text-center group cursor-pointer transform hover:-translate-y-1 block">
                 <div class="w-12 h-12 md:w-16 md:h-16 bg-slate-100 rounded-xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-sm group-hover:scale-110 transition">
                     <?= htmlspecialchars($sholat['icon'] ?? '') ?>
@@ -101,7 +101,7 @@ if (isset($pdo)) {
         <div id="content-sunnah" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4 w-full hidden">
             <?php if(!empty($sholatSunnah)): ?>
             <?php foreach($sholatSunnah as $sholat): ?>
-            <a href="sections/detail-sholat.php?sholat=<?= $sholat['id'] ?? 1 ?>&langkah=1&mode=dewasa"
+            <a href="sections/detail-sholat-dewasa.php?sholat=<?= $sholat['id'] ?? 1 ?>&langkah=1&mode=dewasa"
                class="bg-white border border-slate-200 p-4 md:p-6 rounded-xl shadow-md hover:shadow-lg hover:border-slate-400 transition-all text-center group cursor-pointer transform hover:-translate-y-1 block">
                 <div class="w-12 h-12 md:w-16 md:h-16 bg-slate-100 rounded-xl mx-auto flex items-center justify-center text-2xl md:text-4xl shadow-sm group-hover:scale-110 transition">
                     <?= htmlspecialchars($sholat['icon'] ?? '🌙') ?>
